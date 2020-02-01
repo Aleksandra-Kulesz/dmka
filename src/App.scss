@@ -1,0 +1,25 @@
+@import "styles/reset";
+
+html {
+  font-size: 10px;
+  font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.App{
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@import "styles/main";
+@import "styles/nav";
+@import "styles/about";
