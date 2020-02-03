@@ -7,7 +7,7 @@ class Nav extends Component {
             <nav>
                 <ul className='nav__list'>
                     <li className='nav__list__elem'><Link to='/about'>Poznaj DMKA</Link></li>
-                    <li className='nav__list__elem'>Dla firm</li>
+                    <li className='nav__list__elem'><Link to='/bulletin'>Dla firm</Link></li>
                     <li className='nav__list__elem'>Rekrutacja</li>
                     <li className='nav__list__elem'>Kontakt</li>
                 </ul>

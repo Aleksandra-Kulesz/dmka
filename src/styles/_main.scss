@@ -5,7 +5,7 @@ main{
   z-index: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   .main__background{
     height: 100%;
@@ -21,14 +21,15 @@ main{
     height: 20rem;
     width: auto;
     opacity: .8;
-    padding-bottom: 20rem;
+    margin-top: 5rem;
   }
   .main__header{
     position: absolute;
     z-index: 10;
-    color: black;
-    text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+    color: rgb(1, 14, 43);
+    text-shadow: 0 3px 3px rgba(255,255,255,0.5);
     font-size: 7rem;
-    font-family:  'Black Ops One', cursive;;
+    font-family:  'Black Ops One', cursive;
+    margin-top: 20rem;
   }
 }

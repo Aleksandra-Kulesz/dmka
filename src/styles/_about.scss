@@ -9,7 +9,7 @@
   .about__background {
     height: 100vh;
     width: auto;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 5;
@@ -22,7 +22,7 @@
     top: 0;
     left: 0;
     z-index: 7;
-    background-color: rgba(256, 256, 256, .2);
+    background-color: rgba(0,0,0,.3);
   }
   .about__container {
     position: absolute;
@@ -53,12 +53,11 @@
         .about__main__header--title {
           font-size: 4rem;
           color: white;
-          font-weight: bolder;
+          font-weight: 400;
           text-shadow: 1px 1px 0 #000;
+          font-family: 'Black Ops One', cursive;
 
           span {
-            font-family: 'Black Ops One', cursive;
-            font-weight: 400;
             color: coral;
           }
         }
@@ -69,10 +68,14 @@
         text-shadow: 1px 1px 0 #000;
         font-size: 2rem;
         z-index: 10;
-        padding: 2rem;
+        padding: 3rem;
         line-height: 3rem;
         text-align: justify;
         margin-bottom: 3rem;
+        background-color: rgba(0,0,0,.3);
+        -webkit-box-shadow: 0 0 20px 20px rgba(0,0,0,0.3);
+        -moz-box-shadow: 0 0 20px 20px rgba(0,0,0,0.3);
+        box-shadow: 0 0 20px 20px rgba(0,0,0,0.3);
 
         &:first-of-type {
           font-weight: 600;
@@ -90,16 +93,15 @@
       background-color: rgba(0, 0, 0, 1);
       -webkit-box-shadow: 0px -5px 5px 5px rgba(46,45,46,0.9);
       -moz-box-shadow: 0px -5px 5px 5px rgba(46,45,46,0.9);
-      box-shadow: 0px -5px 5px 5px rgba(46,45,46,0.9);
+      box-shadow: 0px -5px 15px 15px rgba(46,45,46,0.9);
       padding-bottom: 3rem;
 
       .about__cooperators--header {
-        font-size: 3.5rem;
-        font-weight: bolder;
+        font-size: 2.5rem;
         color: coral;
         text-align: center;
-        padding: 1.5rem;
-
+        margin: 3rem;
+        font-family: 'Black Ops One', cursive;
       }
 
       .about__cooperators--logos {

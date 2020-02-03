@@ -2,12 +2,12 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
 import background from './../assets/about_background.jpg'
-import logo from './../assets/DMKA__logo.jpg'
-import navikon from './../assets/navikon_logo.jpeg'
+import logo from './../assets/DMKA_logo.png'
+import navikon from './../assets/navikon_logo.png'
 import midroc from './../assets/midroc_logo.png'
 import energyMont from './../assets/energy-mont_logo.png'
-import dynpap from './../assets/dynpap_logo.jpg'
-import EPG from './../assets/EPG_logo.jpg'
+import dynpap from './../assets/dynpap_logo.png'
+import EPG from './../assets/EPG_logo.png'
 
 class About extends Component {
     render() {

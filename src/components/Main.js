@@ -3,7 +3,7 @@ import mainBackground1 from './../assets/main-background1.jpg'
 import mainBackground2 from './../assets/main-background2.jpg'
 import mainBackground3 from './../assets/main-background3.jpg'
 import mainBackground4 from './../assets/main-background4.jpg'
-import logo from './../assets/DMKA__logo.jpg'
+import logo from './../assets/DMKA_logo.png'
 import {Nav} from "./Nav";
 
 class Main extends Component {
