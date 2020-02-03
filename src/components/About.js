@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import {NavMobile} from "./Nav_mobile";
+import {Footer} from "./Footer";
 
 import background from './../assets/about_background.jpg'
 import logo from './../assets/DMKA_logo.png'
@@ -9,18 +11,17 @@ import energyMont from './../assets/energy-mont_logo.png'
 import dynpap from './../assets/dynpap_logo.png'
 import EPG from './../assets/EPG_logo.png'
 
+
 class About extends Component {
     render() {
         return (
             <section className='about'>
+                <NavMobile/>
                 <img src={background} alt="Welder" className="about__background"/>
                 <div className="about__background--filter"/>
                 <div className="about__container">
                     <article className='about__main'>
-                        <header className='about__main__header'>
-                            <Link to='/'><img src={logo} alt='DMKA logo' className='about__main__header--logo'/></Link>
-                            <h2 className='about__main__header--title'>Poznaj <span>DMKA</span></h2>
-                        </header>
+                        <h2 className='about__main__header'>Poznaj <span>DMKA</span></h2>
                         <p className="about__main__content">Firma DMKA specjalizuje się w usługach
                             spawalniczo-monterskich.</p>
                         <p className="about__main__content">Uczestniczyliśmy w licznych projektach offshore, budowach
@@ -38,8 +39,8 @@ class About extends Component {
                             <img src={EPG} alt="EPG's logo" className="cooperator__logo"/>
                         </div>
                     </aside>
+                    <Footer/>
                 </div>
-
             </section>
         )
     }

@@ -10,10 +10,10 @@ nav {
     text-transform: uppercase;
 
     .nav__list__elem{
-      padding: 1.7rem;
+      padding: 2rem;
       text-align: center;
-      background-color: rgba(256,256,256,.3);
-      border-bottom: 1px solid orange;
+      background-color: rgba(1, 14, 43,.8);
+      border-bottom: 1px solid rgba(255, 141, 10,.4);
       animation-name: fade_in;
       animation-duration: 1s;
       animation-timing-function: linear;
@@ -44,7 +44,7 @@ nav {
       }
       a{
         text-decoration: none;
-        color: white;
+        color: #ff8d0a;
         text-align: center;
         text-shadow: 1px 1px 0 #000;
       }
