@@ -1,8 +1,20 @@
 .contact {
+  min-height: inherit;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .facebook{
+    position: sticky;
+    background-color: #ff8d0a;
+    padding: 1.5rem;
+    font-size: 2.5rem;
+    color: rgb(1, 14, 43);
+    top: 45rem;
+    align-self: flex-start;
+    z-index: 100;
+  }
 
   .contact__details {
     height: calc(90vh - 9rem);
@@ -114,11 +126,14 @@
       color: rgb(1, 14, 43);
       text-align: center;
       padding: .8rem 5rem;
-      background: linear-gradient(135deg, rgba(255, 175, 75, 1) 0%, rgba(255, 146, 10, 0.5) 100%);
+      background: linear-gradient(45deg, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 53%, rgba(255,146,10,1) 100%);
       margin-top: 2rem;
       border: none;
       z-index: 25;
       text-transform: uppercase;
+      i{
+        margin-right: 1rem;
+      }
     }
   }
 }

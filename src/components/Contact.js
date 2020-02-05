@@ -8,6 +8,7 @@ class Contact extends Component {
         return (
             <section className="contact">
                 <NavMobile/>
+                <a href="https://www.facebook.com/DMKAGdynia/" target='_blank' className='facebook'><i className="fab fa-facebook-f"/></a>
                 <div className="contact__details">
                     <img src={logo} alt="DMKA logo" className="contact__details__background"/>
                     <div className="contact__details__content">
@@ -25,10 +26,10 @@ class Contact extends Component {
                     <label for='name'><i className="fas fa-user"/></label>
                     <input id='name 'type="text" className="contact__form__input--name" placeholder='np. Jan Kowalski'/>
                     <label for='phone'><i className="fas fa-mobile-alt"/></label>
-                    <input id='phone'type="text" className="contact__form__input--phone" placeholder='np. +48 000-000-000'/>
+                    <input id='phone'type="number" className="contact__form__input--phone" placeholder='np. +48 000 000 000'/>
                     <label for='message'><i className="fas fa-pencil-alt"/></label>
                     <textarea id='message' className="contact__form__input--message" placeholder='Tutaj wpisz swoją wiadomość'/>
-                    <button className='contact__form__submit'>Wyślij</button>
+                    <button className='contact__form__submit'><i className="fas fa-arrow-circle-up"/>Wyślij</button>
                 </form>
                 <Footer/>
             </section>
