@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import {NavMobile} from "./Nav_mobile";
 import {Footer} from "./Footer";
 
 import background from './../assets/about_background.jpg'
-import logo from './../assets/DMKA_logo.png'
 import navikon from './../assets/navikon_logo.png'
 import midroc from './../assets/midroc_logo.png'
 import energyMont from './../assets/energy-mont_logo.png'
