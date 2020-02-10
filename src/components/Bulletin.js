@@ -14,7 +14,7 @@ class Bulletin extends Component{
                 <div className="bulletin__title">
                     <img src={logo} alt="DMKA logo" className="bulletin__title__background"/>
                     <h2 className='bulletin__title__header'>Biuletyn dla firm</h2>
-                    <button className="bulletin__title__download"><i className="fas fa-file-download"/>Pobierz</button>
+                    <a href='https://www.ets.org/s/gre/pdf/gre_info_bulletin_18_19.pdf' download className="bulletin__title__download"><i className="fas fa-file-download"/>Pobierz</a>
                 </div>
                 <div className="bulletin__container">
                     <img src={bulletin} alt="bulletin page 1" className="bulletin__container__content"/>

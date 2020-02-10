@@ -1,4 +1,5 @@
 @import "styles/reset";
+@import "styles/mixins";
 
 html {
   font-size: 10px;
@@ -28,3 +29,4 @@ body {
 @import "styles/footer";
 @import "styles/contact";
 @import "styles/recruitment";
+@import "styles/job_offers";

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {NavMobile} from "./Nav_mobile";
 import {Footer} from "./Footer";
 import background from "../assets/recruitment_background.jpg";
+import {Link} from 'react-router-dom';
 
 class Recruitment extends Component {
     render() {
@@ -22,12 +23,12 @@ class Recruitment extends Component {
                     <aside className="recruitment__offers">
                         <h3 className="recruitment__offers--header">Aplikuj!</h3>
                         <div className="recruitment__offers--specializations">
-                            <button className='specializations__button'>Spawacz</button>
-                            <button className='specializations__button'>Monter</button>
-                            <button className='specializations__button'>Operator suwnicy</button>
-                            <button className='specializations__button'>Operator WJO</button>
-                            <button className='specializations__button'>Inżynier spawalnik</button>
-                            <button className='specializations__button'>Kowal</button>
+                            <button className='specializations__button'><Link to='/recruitment/welders'>Spawacz</Link></button>
+                            <button className='specializations__button'><Link to='/recruitment/assemblers'>Monter</Link></button>
+                            <button className='specializations__button'><Link to='/recruitment/overhead-crane-operators'>Operator suwnicy</Link></button>
+                            <button className='specializations__button'><Link to='/recruitment/forklift-operators'>Operator WJO</Link></button>
+                            <button className='specializations__button'><Link to='/recruitment/welder-engineers'>Inżynier spawalnik</Link></button>
+                            <button className='specializations__button'><Link to='/recruitment/blacksmiths'>Kowal</Link></button>
                         </div>
                     </aside>
                 </div>

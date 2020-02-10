@@ -102,18 +102,13 @@
         flex-wrap: wrap;
 
         .specializations__button {
-          cursor: pointer;
+          @include button;
           width: 60%;
-          font-size: 1.5rem;
-          font-weight: lighter;
-          color: rgb(1, 14, 43);
-          text-align: center;
-          padding: 1rem 5rem;
-          background: linear-gradient(45deg, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 53%, rgba(255,146,10,1) 100%);
           margin-top: 2rem;
-          border: none;
-          z-index: 25;
-          text-transform: uppercase;
+          a{
+            text-decoration: none;
+            color: rgb(1, 14, 43);
+          }
         }
       }
     }
