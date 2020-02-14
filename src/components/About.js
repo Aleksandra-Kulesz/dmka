@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {NavMobile} from "./Nav_mobile";
 import {Footer} from "./Footer";
 
-import background from './../assets/about_background.jpg'
 import navikon from './../assets/navikon_logo.png'
 import midroc from './../assets/midroc_logo.png'
 import energyMont from './../assets/energy-mont_logo.png'
@@ -15,7 +14,6 @@ class About extends Component {
         return (
             <section className='about'>
                 <NavMobile/>
-                <img src={background} alt="Welder" className="about__background"/>
                 <div className="about__background--filter"/>
                 <div className="about__container">
                     <article className='about__main'>
@@ -28,7 +26,7 @@ class About extends Component {
                             najwyższej jakości dla najbardziej wymagających klientów.</p>
                     </article>
                     <aside className="about__cooperators">
-                        <h3 className="about__cooperators--header">Zaufali nam:</h3>
+                        <h3 className="about__cooperators--header">Zaufali nam</h3>
                         <div className="about__cooperators--logos">
                             <img src={navikon} alt="Navikon's logo" className="cooperator__logo"/>
                             <img src={midroc} alt="Midroc's logo" className="cooperator__logo"/>

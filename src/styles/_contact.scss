@@ -1,120 +1,275 @@
-.contact {
-  min-height: inherit;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@media (max-width: 550px) {
+  .contact {
+    min-height: inherit;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  .facebook{
-    position: sticky;
-    background-color: #ff8d0a;
-    padding: 1.5rem;
-    font-size: 2.5rem;
-    color: rgb(1, 14, 43);
-    top: 45rem;
-    align-self: flex-start;
-    z-index: 100;
-  }
-
-  .contact__details {
-    height: calc(90vh - 9rem);
-    width: 100%;
-    color: white;
-    text-align: center;
-    position: absolute;
-    top: 9rem;
-
-    .contact__details__background {
-      width: 90%;
-      height: auto;
-      top: 0;
-      opacity: 40%;
-      margin-top: 20%;
+    .facebook {
+      position: sticky;
+      background-color: #ff8d0a;
+      padding: 1.5rem;
+      font-size: 2.5rem;
+      color: rgb(1, 14, 43);
+      top: 45rem;
+      align-self: flex-start;
+      z-index: 100;
     }
 
-    .contact__details__content {
-      z-index: 20;
-      position: relative;
-      top: -50vh;
+    .contact__details {
+      height: calc(90vh - 9rem);
       width: 100%;
+      color: white;
+      text-align: center;
+      position: absolute;
+      top: 9rem;
+
+      .contact__details__background {
+        width: 90%;
+        height: auto;
+        top: 0;
+        opacity: 40%;
+        margin-top: 20%;
+      }
+
+      .contact__details__content {
+        z-index: 20;
+        position: relative;
+        top: -50vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .contact__header {
+          @include h2;
+          color: #ff8d0a;
+          text-shadow: 1px 1px 0 black;
+        }
+
+        .contact__details--mail {
+          font-size: 2.5rem;
+          padding: .5rem;
+        }
+
+        .contact__details--phone, .contact__details--address, .contact__details--nip {
+          font-size: 1.5rem;
+          display: block;
+          text-transform: uppercase;
+          padding: .5rem;
+          letter-spacing: 1px;
+        }
+
+        .contact__details--phone {
+          margin-top: 2rem;
+        }
+      }
+    }
+
+    .contact__form {
+      position: absolute;
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;
 
-      .contact__header {
+      top: 90vh;
+      padding-bottom: 10rem;
+
+      .contact__form__header {
         @include h2;
+        margin: 3rem 0;
         color: #ff8d0a;
         text-shadow: 1px 1px 0 black;
       }
 
-      .contact__details--mail {
+      label {
+        background-color: #ff8d0a;
+        margin: 1rem;
         font-size: 2.5rem;
-        padding: .5rem;
+        color: rgb(1, 14, 43);
+
+        i {
+          padding: 2rem;
+        }
       }
 
-      .contact__details--phone, .contact__details--address, .contact__details--nip {
-        font-size: 1.5rem;
-        display: block;
-        text-transform: uppercase;
-        padding: .5rem;
-        letter-spacing: 1px;
+      input {
+        color: rgb(1, 14, 43);
+        text-align: center;
+
+        &::placeholder {
+          color: rgb(1, 14, 43);
+        }
       }
 
-      .contact__details--phone{
+      textarea {
+        width: 75%;
+        padding: 5rem 0;
+        color: rgb(1, 14, 43);
+        text-align: center;
+      }
+
+      .contact__form__submit {
+        @include button;
         margin-top: 2rem;
+
+        i {
+          margin-right: 1rem;
+        }
       }
     }
   }
+}
 
-  .contact__form {
-    position: absolute;
+@media (min-width: 551px) {
+  .contact {
+    min-height: 200vh;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
 
-    top: 90vh;
-    padding-bottom: 10rem;
-
-    .contact__form__header {
-      @include h2;
-      margin: 3rem 0;
-      color: #ff8d0a;
-      text-shadow: 1px 1px 0 black;
-    }
-
-    label {
+    .facebook {
+      position: sticky;
       background-color: #ff8d0a;
-      margin: 1rem;
+      padding: 2.5rem;
       font-size: 2.5rem;
       color: rgb(1, 14, 43);
-
-      i {
-        padding: 2rem;
-      }
+      top: 45rem;
+      align-self: flex-start;
+      z-index: 100;
     }
 
-    input {
-      color: rgb(1, 14, 43);
-      text-align: center;
+    .contact__form {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      background-image: url("./../assets/form_background.jpg");
+      background-position: 0 -20rem;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-bottom: 2px solid #ff8d0a ;
+      top: 0;
+      padding-bottom: 10rem;
 
-      &::placeholder {
+      .contact__form__header {
+        @include h2;
+        margin: 12rem 0 3rem 0;
+        color: #ff8d0a;
+        text-shadow: 1px 1px 0 black;
+      }
+
+      .contact__form__personal--information {
+        height: 20vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        label {
+          background-color: #ff8d0a;
+          margin: 1rem;
+          font-size: 2.5rem;
+          color: rgb(1, 14, 43);
+
+          i {
+            padding: 2rem;
+          }
+        }
+
+        input {
+          color: rgb(1, 14, 43);
+          text-align: center;
+          padding: .5rem;
+          &:first-of-type{
+            margin-right: 5rem;
+          }
+
+          &::placeholder {
+            color: rgb(1, 14, 43);
+          }
+        }
+      }
+
+      label {
+        background-color: #ff8d0a;
+        margin: 1rem;
+        font-size: 2.5rem;
         color: rgb(1, 14, 43);
+
+        i {
+          padding: 2rem;
+        }
+      }
+
+      textarea {
+        width: 75%;
+        padding: 5rem 0;
+        color: rgb(1, 14, 43);
+        text-align: center;
+      }
+
+      .contact__form__submit {
+        @include button;
+        margin-top: 2rem;
+
+        i {
+          margin-right: 1rem;
+        }
       }
     }
 
-    textarea {
-      width: 75%;
-      padding: 5rem 0;
-      color: rgb(1, 14, 43);
+    .contact__details {
+      height: 100vh;
+      width: 100%;
+      color: white;
       text-align: center;
-    }
+      position: absolute;
+      top: 130vh;
 
-    .contact__form__submit{
-      @include button;
-      margin-top: 2rem;
-      i{
-        margin-right: 1rem;
+      .contact__details__background {
+        height: 70%;
+        width: auto;
+        top: 0;
+        margin-top: 5rem;
+        opacity: 40%;
+      }
+
+      .contact__details__content {
+        z-index: 20;
+        position: relative;
+        top: -50vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .contact__header {
+          @include h2;
+          color: #ff8d0a;
+          text-shadow: 1px 1px 0 black;
+        }
+
+        .contact__details--mail {
+          font-size: 2.5rem;
+          padding: .5rem;
+        }
+
+        .contact__details--phone, .contact__details--address, .contact__details--nip {
+          font-size: 1.5rem;
+          display: block;
+          text-transform: uppercase;
+          padding: .5rem;
+          letter-spacing: 1px;
+        }
+
+        .contact__details--phone {
+          margin-top: 2rem;
+        }
       }
     }
   }

@@ -7,24 +7,20 @@ class NavMobile extends Component {
         isOpen: false
     };
 
-    handleOpenClick =() =>{
-      this.setState({isOpen:true})
+    handleOpenClick = () => {
+        this.setState({isOpen: true})
     };
 
-    handleCloseClick =() =>{
-        this.setState({isOpen:false})
+    handleCloseClick = () => {
+        this.setState({isOpen: false})
     };
 
     render() {
         if (!this.state.isOpen) {
             return (
                 <nav className='nav__mobile'>
-                    <Link to='/'>
-                        <div className="nav__mobile__main">
-                            <img src={logo} alt="DMKA logo" className="nav__mobile__main--logo"/>
-                            <h2 className="nav__mobile__main--name">DMKA</h2>
-                        </div>
-                    </Link>
+                    <Link to='/'><img src={logo} alt="DMKA logo" className="nav__mobile__main--logo"/></Link>
+                    <Link to='/'><h2 className="nav__mobile__main--name">DMKA</h2></Link>
                     <i className="fas fa-cogs" onClick={this.handleOpenClick}/>
                 </nav>
             )

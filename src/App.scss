@@ -4,29 +4,23 @@
 html {
   font-size: 10px;
   font-family: 'Raleway', sans-serif;
-  box-sizing: border-box;
+
+  body {
+    background-color: rgb(1, 14, 43);
+    width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+      @import "styles/main";
+      @import "styles/nav_mobile";
+      @import "styles/nav";
+      @import "styles/about";
+      @import "styles/bulletin";
+      @import "styles/footer";
+      @import "styles/contact";
+      @import "styles/recruitment";
+      @import "styles/job_offers";
+  }
 }
 
-body {
-  background-color: rgb(1, 14, 43);
-  width: 100vw;
-  min-height: 100vh;
-  overflow: hidden;
-  box-sizing: border-box;
-}
 
-.App{
-  width: 100vw;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-@import "styles/main";
-@import "styles/nav_mobile";
-@import "styles/nav";
-@import "styles/about";
-@import "styles/bulletin";
-@import "styles/footer";
-@import "styles/contact";
-@import "styles/recruitment";
-@import "styles/job_offers";
