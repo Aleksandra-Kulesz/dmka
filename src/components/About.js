@@ -7,10 +7,19 @@ import midroc from './../assets/midroc_logo.png'
 import energyMont from './../assets/energy-mont_logo.png'
 import dynpap from './../assets/dynpap_logo.png'
 import EPG from './../assets/EPG_logo.png'
+import BO from './../assets/baltic_operator_logo.png'
+import wielton from './../assets/wielton_logo.png'
+import stalkon from './../assets/stalkon_logo.png'
+import skanska from './../assets/skanska_logo.png'
+import man from './../assets/man_logo.png'
 
 
 class About extends Component {
     render() {
+
+const additionalLogos = [BO, wielton, stalkon, skanska, man]
+console.log(window.innerWidth);
+
         return (
             <section className='about'>
                 <NavMobile/>
@@ -32,6 +41,7 @@ class About extends Component {
                             <img src={energyMont} alt="Energy-Mont's logo" className="cooperator__logo"/>
                             <img src={dynpap} alt="Dynpap's logo" className="cooperator__logo"/>
                             <img src={EPG} alt="EPG's logo" className="cooperator__logo"/>
+                            {window.innerWidth>800?additionalLogos.map((e, i)=><img key={i} src={e} alt='logo' className="cooperator__logo" />):null}
                         </div>
                     </aside>
                     <Footer/>

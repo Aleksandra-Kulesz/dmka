@@ -69,15 +69,16 @@
         }
 
         .about__cooperators--logos {
+          width: 100%;
           display: flex;
           justify-content: space-around;
           align-items: center;
           flex-wrap: wrap;
 
           .cooperator__logo {
-            height: 5rem;
-            width: auto;
-            padding: .5rem;
+            height: auto;
+            width: 8rem;
+            padding: 1rem;
           }
         }
       }
@@ -96,14 +97,15 @@
       }
 
       .about__cooperators {
-        margin-top: 5rem;
+
+        .about__cooperators--header {
+          font-size: 3.5rem;
+        }
 
         .about__cooperators--logos {
-          width: 100%;ł
 
           .cooperator__logo {
-            height: 7rem;
-            width: auto;
+            width: 10rem;
           }
         }
       }
@@ -127,14 +129,15 @@
       }
 
       .about__cooperators {
-        margin-top: 5rem;
+
+        .about__cooperators--header {
+          font-size: 3.5rem;
+        }
 
         .about__cooperators--logos {
-          width: 100%;ł
 
           .cooperator__logo {
-            height: 7rem;
-            width: auto;
+            width: 12rem;
           }
         }
       }
