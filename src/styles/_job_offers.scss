@@ -7,6 +7,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(1,14,43,1) 100%);
 
     .jobOffers__header {
       @include h2;
@@ -72,6 +73,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(1,14,43,1) 100%);
 
     .jobOffers__header {
       @include h2;
