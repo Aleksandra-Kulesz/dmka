@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {NavMobile} from "./Nav_mobile";
 import {Footer} from "./Footer";
-import background from "../assets/recruitment_background.jpg";
 import {Link} from 'react-router-dom';
 
 class Recruitment extends Component {
@@ -9,8 +8,6 @@ class Recruitment extends Component {
         return (
             <section className="recruitment">
                 <NavMobile/>
-                <img src={background} alt="Welder" className="recruitment__background"/>
-                <div className="recruitment__background--filter"/>
                 <div className="recruitment__container">
                     <article className='recruitment__content'>
                         <h2 className='recruitment__content__header'>Praca w <span>DMKA</span></h2>

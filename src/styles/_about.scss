@@ -1,5 +1,3 @@
-@media (max-width: 550px) {
-
   .about {
     background-image: url("./../assets/about_background.jpg");
     background-repeat: no-repeat;
@@ -100,103 +98,64 @@
       }
     }
   }
-}
 
-@media (min-width: 551px) {
+@media (min-width: 571px) and (max-width: 750px) {
   .about {
-    background-image: url("./../assets/about_background.jpg");
-    background-repeat: no-repeat;
     background-position: top;
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    height: 100vw;
 
     .about__background--filter {
-      height: 100vh;
       width: 100vw;
       position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 7;
-      background-color: rgba(0, 0, 0, .3);
     }
 
     .about__container {
-      position: absolute;
-      z-index: 10;
-      top: 0;
-      left: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      width: 100%;
-
+        width: 100%;
       .about__main {
-        width: 50%;
-        .about__main__header {
-          @include h2;
-          color: white;
-          text-shadow: 1px 1px 0 #000;
-          margin-top: 12rem;
-          padding-left: 0;
-          padding-right: 0;
+        width: 90%;
+      }
 
-          span {
-            color: #ff8d0a;
+      .about__cooperators {
+        margin-top: 5rem;
+
+        .about__cooperators--logos {
+          width: 100%;ł
+
+          .cooperator__logo {
+            height: 7rem;
+            width: auto;
           }
         }
+      }
+    }
+  }
+}
+
+@media (min-width: 751px) {
+  .about {
+    background-position: top;
+    height: 100vw;
+
+    .about__background--filter {
+      width: 100vw;
+      position: absolute;
+    }
+
+    .about__container {
+
+      .about__main {
+        width: 75%;
 
         .about__main__content {
-          color: white;
-          text-shadow: 1px 1px 0 #000;
-          font-size: 2rem;
-          z-index: 10;
-          padding: 3rem;
-          line-height: 3rem;
-          text-align: center;
           margin-bottom: 3rem;
-          background-color: rgba(0, 0, 0, .3);
-          -webkit-box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.3);
-          -moz-box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.3);
-
-          &:first-of-type {
-            font-weight: 600;
-            text-align: center;
-          }
         }
       }
 
       .about__cooperators {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 1);
-        padding-bottom: 10rem;
         margin-top: 5rem;
 
-        .about__cooperators--header {
-          font-size: 2.5rem;
-          color: #ff8d0a;
-          text-align: center;
-          margin: 3rem;
-          font-family: 'Black Ops One', cursive;
-          text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
-        }
-
         .about__cooperators--logos {
-          width: 100%;
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
-          flex-wrap: wrap;
+          width: 100%;ł
 
           .cooperator__logo {
             height: 7rem;

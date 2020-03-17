@@ -24,17 +24,21 @@ class Contact extends Component {
                 </div>
                 <form className="contact__form">
                     <h2 className="contact__form__header">Formularz kontaktowy</h2>
-                    <div className="contact__form__personal--information">
-                        <label for='name'><i className="fas fa-user"/></label>
+                    <div className="contact__form__input">
+                    <i className="fas fa-user"/>
                         <input id='name ' type="text" className="contact__form__input--name"
                                placeholder='np. Jan Kowalski'/>
-                        <label for='phone'><i className="fas fa-mobile-alt"/></label>
+                    </div>
+                    <div className="contact__form__input">
+                    <i className="fas fa-mobile-alt"/>
                         <input id='phone' type="number" className="contact__form__input--phone"
                                placeholder='np. +48 000 000 000'/>
                     </div>
-                    <label for='message'><i className="fas fa-pencil-alt"/></label>
+                    <div className="contact__form__input">
+                    <i className="fas fa-pencil-alt"/>
                     <textarea id='message' className="contact__form__input--message"
                               placeholder='Tutaj wpisz swoją wiadomość'/>
+                              </div>
                     <button className='contact__form__submit'><i className="fas fa-arrow-circle-up"/>Wyślij</button>
                 </form>
                 <Footer/>

@@ -1,8 +1,7 @@
-@media (max-width: 550px) {
   .bulletin {
     width: 100vw;
     position: relative;
-    min-height: 100vh;
+    height: 100vh;
     background-image: url("./../assets/bulletin_background.jpg");
     background-position: center;
     background-size: cover;
@@ -23,7 +22,7 @@
         opacity: .9;
         position: absolute;
         z-index: 15;
-        margin-top: 7rem;
+        margin: 9rem auto 0 auto;
       }
 
       .bulletin__title__header {
@@ -49,56 +48,20 @@
       }
     }
   }
-}
 
-@media (min-width: 551px) {
-  .bulletin {
-    width: 100vw;
-    min-height: 100vh;
-    position: relative;
-    background-image: url("./../assets/bulletin_background.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  @media (min-width: 571px) {
+    .bulletin {
+      .bulletin__title {
+        height: 50vh;
 
-    .bulletin__title {
-      width: 100%;
-      height: 50vh;
-      margin-top: 10rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
+        .bulletin__title__background {
+          height: 40rem;
+        }
 
-      .bulletin__title__background {
-        height: 40rem;
-        width: auto;
-        opacity: .9;
-        position: absolute;
-        z-index: 15;
-      }
+        .bulletin__title__download {
+          margin-top: 14rem;
 
-      .bulletin__title__header {
-        @include h2;
-        color: rgb(1, 14, 43);
-        position: absolute;
-        text-shadow: 1px 1px 0 #555;
-        z-index: 25;
-        font-size: 4rem;
-      }
-
-      .bulletin__title__download {
-        @include button;
-        text-decoration: none;
-        position: absolute;
-        z-index: 25;
-        margin-top: 10rem;
-
-        i {
-          margin-right: 1rem;
         }
       }
     }
   }
-}
