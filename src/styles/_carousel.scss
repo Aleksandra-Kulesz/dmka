@@ -9,12 +9,13 @@
     h2 {
         @include h2;
         color: #ff8d0a;
-        margin-top: 2rem;
+        margin-top: 5rem;
     }
 
     p{
         font-size: 2rem;
         color: white;
+        padding: 2rem;
     }
 
     .carousel__container {
@@ -46,6 +47,26 @@
             position: absolute;
             top: 50%;
             left: 2rem;
+        }
+    }
+}
+
+@media (min-width: 751px) {
+    .about__carousel {
+
+        .carousel__container{
+
+            .carousel__arrow{
+                font-size: 4rem;
+            }
+
+            .right {
+                right: 10rem;
+            }
+
+            .left {
+                left: 10rem;
+            }
         }
     }
 }

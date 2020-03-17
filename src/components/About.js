@@ -18,8 +18,7 @@ import man from './../assets/man_logo.png';
 class About extends Component {
     render() {
 
-const additionalLogos = [BO, wielton, stalkon, skanska, man]
-console.log(window.innerWidth);
+const additionalLogos = [BO, wielton, stalkon, skanska, man];
 
         return (
             <section className='about'>

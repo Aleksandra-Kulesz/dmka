@@ -17,8 +17,10 @@ state = {
     currentSlide: 0
 };
 
+
+
 handleNextSlide = ()=> {
-    if (this.state.currentSlide>=9){
+    if (this.state.currentSlide>=(this.state.slides.length-1)){
         this.setState({currentSlide:0})
     } else {
         this.setState({currentSlide:this.state.currentSlide+1});
@@ -27,7 +29,7 @@ handleNextSlide = ()=> {
 
 handlePreviousSlide = ()=> {
     if (this.state.currentSlide<=0){
-        this.setState({currentSlide:9})
+        this.setState({currentSlide:this.state.slides.length-1})
     } else
     this.setState({currentSlide:this.state.currentSlide-1});
 }
@@ -36,11 +38,11 @@ handlePreviousSlide = ()=> {
         return (
             <section className='about__carousel' >
                 <h2>Galeria</h2>
-                <p>Kilka ujęć z dnia pracy.</p>
+                <p>Kilka ujęć z naszego dnia pracy.</p>
                 <div className='carousel__container'>
                     <img className='carousel__slide' src={this.state.slides[this.state.currentSlide]} alt="from work"/>
-                    <div className='carousel__arrow left' onClick={this.handlePreviousSlide}><i class="fas fa-chevron-left"/></div>
-                    <div className='carousel__arrow right' onClick={this.handleNextSlide}><i class="fas fa-chevron-right"/></div>
+                    <div className='carousel__arrow left' onClick={this.handlePreviousSlide}><i className="fas fa-chevron-left"/></div>
+                    <div className='carousel__arrow right' onClick={this.handleNextSlide}><i className="fas fa-chevron-right"/></div>
                 </div>
         </section>
         )

@@ -1,8 +1,5 @@
-@media (max-width: 550px) {
-
   .jobOffers {
-    min-height: inherit;
-    position: relative;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,32 +59,13 @@
       }
     }
   }
-}
 
-@media (min-width: 551px) {
+@media (min-width: 571px) {
 
   .jobOffers {
-    min-height: 200vh;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(1,14,43,1) 100%);
-
-    .jobOffers__header {
-      @include h2;
-      color: #ff8d0a;
-      text-shadow: 1px 1px 0 black;
-      position: absolute;
-      top: 10rem;
-    }
 
     .jobOffers__lists {
       width: 50%;
-      position: absolute;
-      top: 20rem;
-      margin-bottom: 10rem;
 
       .job {
         background-color: white;
