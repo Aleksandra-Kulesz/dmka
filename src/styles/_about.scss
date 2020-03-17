@@ -3,28 +3,13 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 100vh;
+    height: auto;
     width: 100vw;
-    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-
-    .about__background--filter {
-      height: 100vh;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 7;
-      background-color: rgba(0, 0, 0, .3);
-    }
+    justify-content: flex-start;
 
     .about__container {
-      position: absolute;
-      z-index: 10;
-      top: 0;
-      left: 0;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -104,11 +89,6 @@
     background-position: top;
     height: 100vw;
 
-    .about__background--filter {
-      width: 100vw;
-      position: absolute;
-    }
-
     .about__container {
         width: 100%;
       .about__main {
@@ -135,11 +115,6 @@
   .about {
     background-position: top;
     height: 100vw;
-
-    .about__background--filter {
-      width: 100vw;
-      position: absolute;
-    }
 
     .about__container {
 

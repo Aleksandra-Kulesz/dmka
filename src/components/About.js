@@ -14,7 +14,6 @@ class About extends Component {
         return (
             <section className='about'>
                 <NavMobile/>
-                <div className="about__background--filter"/>
                 <div className="about__container">
                     <article className='about__main'>
                         <h2 className='about__main__header'>Poznaj <span>DMKA</span></h2>
