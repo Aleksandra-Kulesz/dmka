@@ -29,7 +29,7 @@
           text-shadow: 1px 1px 0 #000;
           font-family: 'Black Ops One', cursive;
           margin: 10rem auto 3rem auto;
-        
+
           span {
             color: #ff8d0a;
           }
@@ -59,7 +59,7 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(1,14,43,1) 100%);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(1, 14, 43, 1) 100%);
         padding-bottom: 10rem;
         margin: 2rem;
 
@@ -79,13 +79,17 @@
           align-items: center;
           flex-wrap: wrap;
 
-          .specializations__button {
-            @include button;
+          a {
+            text-decoration: none;
+            color: rgb(1, 14, 43);
             width: 60%;
             margin-top: 2rem;
-            a{
-              text-decoration: none;
-              color: rgb(1, 14, 43);
+
+            .specializations__button {
+              @include button;
+              width: 100%;
+              padding: 2rem;
+          
             }
           }
         }
@@ -93,63 +97,20 @@
     }
   }
 
-@media (min-width: 551px) {
-  .recruitment {
+  @media (min-width: 571px) {
+    .recruitment {
 
-    .recruitment__container {
-      top: 15vh;
-      height: 50%;
-      width: 50%;
+      .recruitment__container {
+        top: 15vh;
+        height: 50%;
+        width: 50%;
 
-      .recruitment__content {
+        .recruitment__content {
 
-        .recruitment__content__paragraph {
-          margin-bottom: 2rem;
-
-          &:first-of-type {
-            font-weight: 600;
-            text-align: center;
-          }
-        }
-      }
-
-      .recruitment__offers {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        background-color: rgb(1, 11, 33);
-        padding-bottom: 10rem;
-
-        .recruitment__offers--header {
-          font-size: 2.5rem;
-          color: #ff8d0a;
-          text-align: center;
-          margin: 2rem;
-          font-family: 'Black Ops One', cursive;
-          text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
-        }
-
-        .recruitment__offers--specializations {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          flex-wrap: wrap;
-
-          .specializations__button {
-            @include button;
-            padding: 2rem;
-            width: 60%;
-            margin-top: 2rem;
-            a{
-              text-decoration: none;
-              color: rgb(1, 14, 43);
-            }
+          .recruitment__content__paragraph {
+            margin-bottom: 2rem;
           }
         }
       }
     }
   }
-}

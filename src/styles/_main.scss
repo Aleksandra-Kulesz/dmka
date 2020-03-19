@@ -1,19 +1,16 @@
   main {
-    width: 100vw;
+    overflow-x: hidden;
     height: 100vh;
-    position: relative;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    position: relative;
 
     .main__background {
-      width: 100vw;
+      width: auto;
       height: 100vh;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 5;
     }
 
     .main__logo {
@@ -32,7 +29,7 @@
       text-shadow: 0 3px 3px rgba(255, 255, 255, 0.5);
       font-size: 7rem;
       font-family: 'Black Ops One', cursive;
-      top: 0;
+      top: 15rem;
     }
   }
 
@@ -40,12 +37,17 @@
   main{
     justify-content: center;
 
+    .main__background {
+      width: 100vw;
+      max-height: 100vh;
+    }
+
     .main__logo {
       height: 30rem;
     }
 
     .main__header {
-      margin-top: 25rem;
+      top: 20rem;
     }
   }
 }

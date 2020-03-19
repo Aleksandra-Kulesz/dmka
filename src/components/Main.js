@@ -16,7 +16,7 @@ class Main extends Component {
     componentDidMount() {
         this.intervalID = setInterval(() => {
 
-                if (this.state.currentBg < 3) {
+                if (this.state.currentBg < this.state.bgs.length-1) {
                     this.setState({
                         currentBg: this.state.currentBg + 1
                     });

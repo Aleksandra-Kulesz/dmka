@@ -4,6 +4,11 @@ import {Footer} from "./Footer";
 import logo from './../assets/DMKA_logo.png'
 
 class Contact extends Component {
+
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     render() {
         return (
             <section className="contact">

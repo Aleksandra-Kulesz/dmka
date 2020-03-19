@@ -16,6 +16,11 @@ import man from './../assets/man_logo.png';
 
 
 class About extends Component {
+
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+
     render() {
 
 const additionalLogos = [BO, wielton, stalkon, skanska, man];

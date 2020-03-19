@@ -2,8 +2,7 @@
     position: absolute;
     z-index: 10;
     bottom: 0;
-    width: 100%;
-    height: 9rem;
+    width: 100vw;
 
     .nav__list {
       font-size: 2rem;
@@ -59,7 +58,7 @@
 
 @media (min-width:551px) {
   nav {
-    bottom: 25%;
+    bottom: 22%;
 
     .nav__list {
       display: flex;
@@ -68,6 +67,9 @@
       .nav__list__elem {
         width: 20%;
         border-radius: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         @keyframes fade_in {
           0% {

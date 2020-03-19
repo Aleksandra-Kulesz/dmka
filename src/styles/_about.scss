@@ -31,17 +31,7 @@
         }
 
         .about__main__content {
-          color: white;
-          text-shadow: 1px 1px 0 #000;
-          font-size: 2rem;
-          z-index: 10;
-          padding: 3rem;
-          line-height: 3rem;
-          text-align: center;
-          background-color: rgba(0, 0, 0, .3);
-          -webkit-box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.3);
-          -moz-box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.3);
+          @include p;
 
           &:first-of-type {
             font-weight: 600;

@@ -13,9 +13,7 @@
     }
 
     p{
-        font-size: 2rem;
-        color: white;
-        padding: 2rem;
+    @include p;
     }
 
     .carousel__container {

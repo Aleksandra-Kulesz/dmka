@@ -1,4 +1,4 @@
-@mixin h2{
+@mixin h2 {
   font-size: 3.5rem;
   font-weight: bolder;
   padding-top: 1.5rem;
@@ -8,14 +8,23 @@
   font-family: 'Black Ops One', cursive;
 }
 
-@mixin button{
+@mixin button {
   font-size: 1.5rem;
   font-weight: lighter;
   color: rgb(1, 14, 43);
   text-align: center;
   padding: .8rem 5rem;
-  background: linear-gradient(45deg, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 53%, rgba(255,146,10,1) 100%);
+  background: linear-gradient(45deg, rgba(255, 175, 75, 1) 0%, rgba(255, 146, 10, 1) 53%, rgba(255, 146, 10, 1) 100%);
   border: none;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+@mixin p {
+  color: white;
+  text-shadow: 1px 1px 0 #000;
+  font-size: 2rem;
+  padding: 3rem;
+  line-height: 3rem;
+  text-align: center;
 }
