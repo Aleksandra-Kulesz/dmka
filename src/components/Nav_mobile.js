@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import logo from './../assets/DMKA_logo.png'
+import logo from './../assets/logos/DMKA_logo.png'
 
 class NavMobile extends Component {
     state = {

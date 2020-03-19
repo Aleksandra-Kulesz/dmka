@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {NavMobile} from "./Nav_mobile";
 import {Footer} from "./Footer";
-import logo from './../assets/DMKA_logo.png'
+import logo from './../assets/logos/DMKA_logo.png'
 
 class Contact extends Component {
 

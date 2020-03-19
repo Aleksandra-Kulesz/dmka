@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import mainBackground1 from './../assets/main-background2.jpg'
-import mainBackground2 from './../assets/main-background4.jpg'
-import mainBackground3 from './../assets/main-background3.jpg'
-import mainBackground4 from './../assets/main-background1.jpg'
-import logo from './../assets/DMKA_logo.png'
+import mainBackground1 from './../assets/backgrounds/main-background2.jpg'
+import mainBackground2 from './../assets/backgrounds/main-background4.jpg'
+import mainBackground3 from './../assets/backgrounds/main-background3.jpg'
+import mainBackground4 from './../assets/backgrounds/main-background1.jpg'
+import logo from './../assets/logos/DMKA_logo.png'
 import {Nav} from "./Nav";
 
 class Main extends Component {

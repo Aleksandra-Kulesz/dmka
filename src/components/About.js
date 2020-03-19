@@ -3,16 +3,20 @@ import {NavMobile} from "./Nav_mobile";
 import {Carousel} from "./Carousel";
 import {Footer} from "./Footer";
 
-import navikon from './../assets/navikon_logo.png';
-import midroc from './../assets/midroc_logo.png';
-import energyMont from './../assets/energy-mont_logo.png';
-import dynpap from './../assets/dynpap_logo.png';
-import EPG from './../assets/EPG_logo.png';
-import BO from './../assets/baltic_operator_logo.png';
-import wielton from './../assets/wielton_logo.png';
-import stalkon from './../assets/stalkon_logo.png';
-import skanska from './../assets/skanska_logo.png';
-import man from './../assets/man_logo.png';
+import navikon from './../assets/logos/navikon_logo.png';
+import midroc from './../assets/logos/midroc_logo.png';
+import energyMont from './../assets/logos/energy-mont_logo.png';
+import dynpap from './../assets/logos/dynpap_logo.png';
+import EPG from './../assets/logos/EPG_logo.png';
+import thor from './../assets/logos/thor_logo.png';
+import crist from './../assets/logos/crist_logo.png';
+import wielospaw from './../assets/logos/wielospaw_logo.png';
+import WNS from './../assets/logos/wns_logo.png';
+import BO from './../assets/logos/baltic_operator_logo.png';
+import wielton from './../assets/logos/wielton_logo.png';
+import stalkon from './../assets/logos/stalkon_logo.png';
+import skanska from './../assets/logos/skanska_logo.png';
+import man from './../assets/logos/man_logo.png';
 
 
 class About extends Component {
@@ -23,7 +27,7 @@ class About extends Component {
 
     render() {
 
-const additionalLogos = [BO, wielton, stalkon, skanska, man];
+const additionalLogos = [thor, crist, wielospaw, WNS, BO, wielton, stalkon, skanska, man];
 
         return (
             <section className='about'>

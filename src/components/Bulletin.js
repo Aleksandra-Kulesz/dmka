@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {NavMobile} from "./Nav_mobile";
-import logo from './../assets/DMKA_logo.png'
+import logo from './../assets/logos/DMKA_logo.png'
 import {Footer} from "./Footer";
 
 class Bulletin extends Component{

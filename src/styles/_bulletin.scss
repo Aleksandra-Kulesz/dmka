@@ -2,11 +2,11 @@
     overflow-x: hidden;
     width: auto;
     height: 100vh;
-    background-image: url("./../assets/bulletin_background.jpg");
+    background-image: url("./../assets/backgrounds/bulletin_background-mobile.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
+    
     .bulletin__title {
       position: absolute;
       top:50%;
@@ -48,6 +48,8 @@
 
   @media (min-width: 571px) {
     .bulletin {
+      background-image: url("./../assets/backgrounds/bulletin_background.jpg");
+
       .bulletin__title {
         height: 50vh;
 
