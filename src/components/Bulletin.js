@@ -17,4 +17,4 @@ class Bulletin extends Component{
     }
 }
 
-export {Bulletin}
+export {Bulletin};

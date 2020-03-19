@@ -142,6 +142,10 @@
         }
       }
 
+      .contact__form__errors{
+        @include p;
+      }
+      
       .contact__form__submit {
         @include button;
         margin-top: 2rem;

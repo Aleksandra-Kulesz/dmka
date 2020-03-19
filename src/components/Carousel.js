@@ -10,10 +10,14 @@ import slide7 from './../assets/slide7.jpg'
 import slide8 from './../assets/slide8.jpg'
 import slide9 from './../assets/slide9.jpg'
 import slide10 from './../assets/slide10.jpg'
+import slide11 from './../assets/slide11.jpg'
+import slide12 from './../assets/slide12.jpg'
+import slide13 from './../assets/slide13.jpg'
+import slide14 from './../assets/slide14.jpg'
 
 class Carousel extends Component {
 state = {
-    slides:[slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8, slide9, slide10],
+    slides:[slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8, slide9, slide10, slide11, slide12, slide13, slide14],
     currentSlide: 0
 };
 
@@ -49,4 +53,4 @@ handlePreviousSlide = ()=> {
     }
 };
 
-export {Carousel}
+export {Carousel};

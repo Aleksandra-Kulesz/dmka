@@ -5,6 +5,32 @@ import logo from './../assets/DMKA_logo.png'
 
 class Contact extends Component {
 
+    state = {
+        name: '',
+        phone: '',
+        message:'',
+        errors: []
+    };
+
+    handleChange = e => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    };
+
+    handleFormSubmit = e => {
+        e.preventDefault();
+        const errors = [];
+        const {name, phone, message} = this.state;
+
+        if (name.length < 3 || phone.length < 9 || message.length < 3) {
+            errors.push('Pola imię i nazwisko oraz wiadomość muszą składać się z co najmniej 3 znaków, a pole numer telefonu z co najmniej 9.');
+            this.setState({
+                errors,
+            });
+        }
+    };
+
     componentDidMount() {
         window.scrollTo(0, 0);
     }
@@ -13,7 +39,7 @@ class Contact extends Component {
         return (
             <section className="contact">
                 <NavMobile/>
-                <a href="https://www.facebook.com/DMKAGdynia/" target='_blank' className='facebook'><i
+                <a href="https://www.facebook.com/DMKAGdynia/" target={'_blank'} className='facebook'><i
                     className="fab fa-facebook-f"/></a>
                 <div className="contact__details">
                     <img src={logo} alt="DMKA logo" className="contact__details__background"/>
@@ -27,24 +53,27 @@ class Contact extends Component {
                         <span className='contact__details--address'>ul. J. Porazińskiej 8c/7 81-593 Gdynia</span>
                     </div>
                 </div>
-                <form className="contact__form">
+                <form className="contact__form" onSubmit={this.handleFormSubmit}>
                     <h2 className="contact__form__header">Formularz kontaktowy</h2>
                     <div className="contact__form__input">
                     <i className="fas fa-user"/>
-                        <input id='name ' type="text" className="contact__form__input--name"
+                        <input id='name ' onChange={this.handleChange} name='name' type="text" className="contact__form__input--name"
                                placeholder='np. Jan Kowalski'/>
                     </div>
                     <div className="contact__form__input">
                     <i className="fas fa-mobile-alt"/>
-                        <input id='phone' type="number" className="contact__form__input--phone"
+                        <input id='phone' type="number" onChange={this.handleChange} name='phone' className="contact__form__input--phone"
                                placeholder='np. +48 000 000 000'/>
                     </div>
                     <div className="contact__form__input">
                     <i className="fas fa-pencil-alt"/>
-                    <textarea id='message' className="contact__form__input--message"
+                    <textarea id='message' onChange={this.handleChange} name='message' className="contact__form__input--message"
                               placeholder='Tutaj wpisz swoją wiadomość'/>
-                              </div>
-                    <button className='contact__form__submit'><i className="fas fa-arrow-circle-up"/>Wyślij</button>
+                    </div>
+
+        {this.state.errors.length>0?<p className="contact__form__errors">{this.state.errors.map((e)=>e)}</p>:null}
+
+                    <button className='contact__form__submit' onClick={this.handleFormSubmit}><i className="fas fa-arrow-circle-up"/>Wyślij</button>
                 </form>
                 <Footer/>
             </section>
