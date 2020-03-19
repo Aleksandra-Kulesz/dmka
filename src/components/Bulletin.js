@@ -8,11 +8,9 @@ class Bulletin extends Component{
         return (
             <section className="bulletin">
                 <NavMobile/>
-                <div className="bulletin__title">
-                    <img src={logo} alt="DMKA logo" className="bulletin__title__background"/>
+                    <img src={logo} alt="DMKA logo" className="bulletin__title"/>
                     <h2 className='bulletin__title__header'>Biuletyn dla firm</h2>
                     <a href='https://www.ets.org/s/gre/pdf/gre_info_bulletin_18_19.pdf' download className="bulletin__title__download"><i className="fas fa-file-download"/>Pobierz</a>
-                </div>
                 <Footer/>
             </section>
         )
