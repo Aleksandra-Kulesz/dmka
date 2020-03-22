@@ -18,12 +18,12 @@ class JobOffer extends Component {
         return (
             <li className='job' onClick={e => this.handleOpenClick(e)}>
                 <h3 className='job__name'>
-                    {this.props.job.title} - {this.props.job.place}</h3>
+                    {this.props.job.attributes.position} - {this.props.job.attributes.place}</h3>
 
                 <p className={classes}>
-                    <span>Miejsce pracy: {this.props.job.place}</span>
-                    Opis: {this.props.job.description}
-                    <span>Stawka: {this.props.job.salary}</span>
+                    <span>Miejsce pracy: {this.props.job.attributes.place}</span>
+                    Opis: {this.props.job.attributes.description}
+                    <span>Stawka: {this.props.job.attributes.salary}</span>
                 </p>
 
                 <button className="job_application">Aplikuj!</button>

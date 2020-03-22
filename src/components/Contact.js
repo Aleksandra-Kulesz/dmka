@@ -70,6 +70,9 @@ class Contact extends Component {
                     <textarea id='message' onChange={this.handleChange} name='message' className="contact__form__input--message"
                               placeholder='Tutaj wpisz swoją wiadomość'/>
                     </div>
+                    <div className="contact__form__input">
+                    <input type='file'/>
+                    </div>
 
         {this.state.errors.length>0?<p className="contact__form__errors">{this.state.errors.map((e)=>e)}</p>:null}
 
