@@ -21,7 +21,6 @@
       color: white;
       text-align: center;
       background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(1,14,43,1) 100%);
-      
 
       .contact__details__background {
         width: 90%;
@@ -65,98 +64,6 @@
         }
       }
     }
-
-    .contact__form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      width: 100vw;
-      background-image: url(./../assets/backgrounds/form_background.jpg);
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      padding-bottom: 10rem;
-      border-top: 1px solid #ff8d0a;
-
-      .contact__form__header {
-        @include h2;
-        margin: 3rem 0;
-        color: #ff8d0a;
-        text-shadow: 1px 1px 0 black;
-      }
-
-      .contact__form__input {
-        margin-bottom: 2rem;
-        font-size: 2.5rem;
-        color: rgb(1, 14, 43);
-        display: flex;
-        width: 75%;
-        justify-content: center;
-
-        i {
-          padding: 1rem;
-          background: #ff8d0a;
-          color: white;
-          min-width: 4rem;
-          text-align: center;
-        }
-
-        input {
-          padding: 1rem;
-          outline: none;
-          border: 1px solid #ff8d0a;
-          width: 100%;
-
-          &::placeholder {
-            color: rgb(1, 14, 43);
-            font-size: 1.2rem;
-            font-family: 'Raleway', sans-serif;
-            text-align: center;
-          }
-
-          &:focus {
-            border: 1px solid #ff8d0a;
-          }
-        }
-
-        textarea {
-          min-height: 10rem;
-          padding: 1rem;
-          color: rgb(1, 14, 43);
-          text-align: center;
-          outline: none;
-          width: 100%;
-          border: 1px solid #ff8d0a;
-
-          &::placeholder {
-            color: rgb(1, 14, 43);
-            font-family: 'Raleway', sans-serif;
-            font-size: 1.2rem;
-            text-align: center;
-          }
-
-          &:focus {
-            border: px solid darkorange;
-          }
-        }
-      }
-
-      .contact__form__errors{
-        @include p;
-      }
-      
-      .contact__form__submit {
-        @include button;
-        margin-top: 2rem;
-        color: white;
-
-        i {
-          margin-right: 1rem;
-          color: white;
-        }
-      }
-    }
   }
 
   @media (min-width: 571px) {
@@ -164,20 +71,6 @@
 
       .facebook {
         padding: 2.5rem;
-      }
-
-      .contact__form {
-        height: 100vh;
-        justify-content: center;
-        background-position: center;
-
-        .contact__form__header {
-          margin: 3rem 0;
-        }
-
-        .contact__form__input {
-          width: 50%;
-        }
       }
 
       .contact__details {

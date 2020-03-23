@@ -2,12 +2,13 @@ import React, {Component} from 'react';
 import {NavMobile} from "./Nav_mobile";
 import {Footer} from "./Footer";
 import {JobOffer} from "./JobOffer";
+import {Link} from 'react-router-dom';
 
 class JobOffers extends Component {
     state = {
         isLoaded:false,
         jobOffers:[],
-        currentTypeOfferArr:[]
+        currentTypeOfferArr:[],
     }
 
 
@@ -21,6 +22,8 @@ class JobOffers extends Component {
 
         this.setState({currentTypeOfferArr:currentTypeOfferArr})
     }
+
+
 
     componentDidMount() {
         window.scrollTo(0, 0);
@@ -42,11 +45,12 @@ class JobOffers extends Component {
     }
 
     render() {
-        const infoParagraph = <><p className='jobOffers__paragraph'>Aktualnie brak ofert w tej kategorii, aplikuj z wyprzedzeniem przez formularz kontaktowy.</p><button className='btn'>Aplikuj!</button></>;
+        const infoParagraph = <><p className='jobOffers__paragraph'>Aktualnie brak ofert w tej kategorii, aplikuj z wyprzedzeniem przez formularz kontaktowy.</p><Link to='/contact'><button className='btn'>Aplikuj!</button></Link></>;
         const offerList = (<ul className="list__container">
         {this.state.currentTypeOfferArr.map((e,i) => {
                 return (
-                    <JobOffer job={e} key={i}/>
+                    <JobOffer   job={e} 
+                                key={i}/>
                 )
             }
         )}

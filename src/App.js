@@ -10,10 +10,6 @@ import {Bulletin} from "./components/Bulletin";
 import {Contact} from "./components/Contact";
 import {Recruitment} from "./components/Recruitment";
 import {JobOffers} from "./components/JobOffers";
-// import {Offers} from './base/TestBase'
-
-
-// const {welders, assemblers, craneOperators, forkliftOperators, welderEngineers, blacksmiths} = Offers;
 
 function App() {
     return (

@@ -1,22 +1,32 @@
 import React, {Component} from 'react';
+import {ContactForm} from "./ContactForm";
 
 class JobOffer extends Component {
     state = {
-        isOpen: false
+        isOfferOpen: false,
+        isModalOpen:false
     };
 
-    handleOpenClick = (e) => {
-        this.setState({isOpen:!this.state.isOpen})
+    handleOfferOpen = () => {
+        this.setState({isOfferOpen:!this.state.isOfferOpen})
+    };
+
+    handleModalOpen = () => {
+        this.setState({isModalOpen:!this.state.isModalOpen})
+    };
+
+    handleModalClose = () => {
+        this.setState({isModalOpen:false})
     };
 
     render() {
         let classes = 'job__description';
-        if (this.state.isOpen) {
+        if (this.state.isOfferOpen) {
             classes = 'job__description--open';
         }
 
         return (
-            <li className='job' onClick={e => this.handleOpenClick(e)}>
+            <li className='job' onClick={e => this.handleOfferOpen(e)}>
                 <h3 className='job__name'>
                     {this.props.job.attributes.position} - {this.props.job.attributes.place}</h3>
 
@@ -26,7 +36,9 @@ class JobOffer extends Component {
                     <span>Stawka: {this.props.job.attributes.salary}</span>
                 </p>
 
-                <button className="job_application">Aplikuj!</button>
+                <button className="job_application" onClick={this.handleModalOpen}>Aplikuj!</button>
+
+                {this.state.isModalOpen?<ContactForm type='modal' closeModal={this.handleModalClose}/>:null}
             </li>
         )
     }
