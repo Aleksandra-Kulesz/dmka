@@ -1,16 +1,15 @@
 @font-face {
-    font-family: 'black_ops_oneregular';
-    src: url('./../assets/fonts/blackopsone-regular-webfont.woff2') format('woff2'),
-         url('./../assets/fonts/blackopsone-regular-webfont.woff') format('woff');
+    font-family: 'Black Ops One';
+    src: url('./../assets/fonts/subset-BlackOpsOne-Regular.woff2') format('woff2'),
+        url('./../assets/fonts/subset-BlackOpsOne-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
  
 @font-face {
-    font-family: 'ralewaymedium';
-    src: url('./../assets/fonts/raleway-medium-webfont.woff2') format('woff2'),
-         url('./../assets/fonts/raleway-medium-webfont.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Raleway';
+    src: url('./../assets/fonts/subset-Raleway-Medium.woff2') format('woff2'),
+        url('./../assets/fonts/subset-Raleway-Medium.woff') format('woff');
+    font-weight: 500;
     font-style: normal;
 }

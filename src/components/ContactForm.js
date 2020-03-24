@@ -57,10 +57,12 @@ class ContactForm extends Component {
 
     fetch("http://panel.dmka.allan690.usermd.net/api/create/job_applications", {
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
+        Accept: '*/*',
+        "Content-Type": "application/json",
+        Host: 'panel.dmka.allan690.usermd.net'
       },
       method: "POST",
+      mode:'no-cors',
       body: JSON.stringify(application)
     })
       .then(data => {
