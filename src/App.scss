@@ -1,9 +1,10 @@
 @import "styles/reset";
 @import "styles/mixins";
+@import "styles/fonts";
 
 html {
   font-size: 10px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'ralewaymedium';
 
   body {
     background-color: rgb(1, 14, 43);

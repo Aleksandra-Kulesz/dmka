@@ -5,7 +5,7 @@
   padding-bottom: 1.5rem;
   width: 100%;
   text-align: center;
-  font-family: 'Black Ops One', cursive;
+  font-family: 'black_ops_oneregular';
 }
 
 @mixin button {
@@ -13,8 +13,13 @@
   font-weight: lighter;
   color: rgb(1, 14, 43);
   text-align: center;
-  padding: .8rem 5rem;
-  background: linear-gradient(45deg, rgba(255, 175, 75, 1) 0%, rgba(255, 146, 10, 1) 53%, rgba(255, 146, 10, 1) 100%);
+  padding: 0.8rem 5rem;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 175, 75, 1) 0%,
+    rgba(255, 146, 10, 1) 53%,
+    rgba(255, 146, 10, 1) 100%
+  );
   border: none;
   text-transform: uppercase;
   cursor: pointer;

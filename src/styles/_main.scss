@@ -1,40 +1,40 @@
-  main {
-    overflow-x: hidden;
+main {
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+
+  .main__background {
+    width: auto;
     height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    position: relative;
-
-    .main__background {
-      width: auto;
-      height: 100vh;
-    }
-
-    .main__logo {
-      position: absolute;
-      z-index: 7;
-      height: 20rem;
-      width: auto;
-      opacity: .8;
-      top:5rem;
-    }
-
-    .main__header {
-      position: absolute;
-      z-index: 10;
-      color: rgb(1, 14, 43);
-      text-shadow: 0 3px 3px rgba(255, 255, 255, 0.5);
-      font-size: 7rem;
-      font-family: 'Black Ops One', cursive;
-      top: 15rem;
-    }
   }
 
-@media (min-width: 571px){
-  main{
+  .main__logo {
+    position: absolute;
+    z-index: 7;
+    height: 20rem;
+    width: auto;
+    opacity: 0.8;
+    top: 5rem;
+  }
+
+  .main__header {
+    position: absolute;
+    z-index: 10;
+    color: rgb(1, 14, 43);
+    text-shadow: 0 3px 3px rgba(255, 255, 255, 0.5);
+    font-size: 7rem;
+    font-family: 'black_ops_oneregular';
+    top: 15rem;
+  }
+}
+
+@media (min-width: 571px) {
+  main {
     justify-content: center;
 
     .main__background {

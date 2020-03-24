@@ -1,70 +1,72 @@
 .about__carousel {
-    width: 100vw;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(1, 14, 43, 1) 100%);
+  width: 100vw;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(1, 14, 43, 1) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h2 {
+    @include h2;
+    color: #ff8d0a;
+    margin-top: 5rem;
+  }
+
+  p {
+    @include p;
+  }
+
+  .carousel__container {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+    width: 100%;
 
-    h2 {
-        @include h2;
-        color: #ff8d0a;
-        margin-top: 5rem;
+    .carousel__slide {
+      max-width: 75%;
+      max-height: calc(100vh - 17.5rem);
+      margin: 3rem 0;
+      border: 1px solid #ff8d0a;
     }
 
-    p{
-    @include p;
+    .carousel__arrow {
+      font-size: 2rem;
+      color: #ff8d0a;
     }
 
-    .carousel__container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        width: 100%;
-
-        .carousel__slide {
-            max-width: 75%;
-            max-height:calc(100vh - 17.5rem);
-            margin: 3rem 0;
-            border: 1px solid #ff8d0a;
-        }
-
-        .carousel__arrow {
-            font-size: 2rem;
-            color: #ff8d0a;
-        }
-
-        .right {
-            position: absolute;
-            top: 50%;
-            right: 2rem;
-        }
-
-        .left {
-            position: absolute;
-            top: 50%;
-            left: 2rem;
-        }
+    .right {
+      position: absolute;
+      top: 50%;
+      right: 2rem;
     }
+
+    .left {
+      position: absolute;
+      top: 50%;
+      left: 2rem;
+    }
+  }
 }
 
 @media (min-width: 751px) {
-    .about__carousel {
+  .about__carousel {
+    .carousel__container {
+      .carousel__arrow {
+        font-size: 4rem;
+      }
 
-        .carousel__container{
+      .right {
+        right: 10rem;
+      }
 
-            .carousel__arrow{
-                font-size: 4rem;
-            }
-
-            .right {
-                right: 10rem;
-            }
-
-            .left {
-                left: 10rem;
-            }
-        }
+      .left {
+        left: 10rem;
+      }
     }
+  }
 }

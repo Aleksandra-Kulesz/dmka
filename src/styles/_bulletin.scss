@@ -1,75 +1,73 @@
-  .bulletin {
-    overflow-x: hidden;
-    width: auto;
+.bulletin {
+  overflow-x: hidden;
+  width: auto;
+  height: 100vh;
+  background-image: url("./../assets/backgrounds/bulletin_background-mobile.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  &::after {
+    content: "";
     height: 100vh;
-    background-image: url("./../assets/backgrounds/bulletin_background-mobile.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    &::after{
-      content: '';
-      height: 100vh;
-      width:100vw;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 15;
-      background-color: rgba($color: #000000, $alpha: .4);
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+  }
+
+  .bulletin__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 40vh;
+    opacity: 0.9;
+    z-index: 20;
+  }
+
+  .bulletin__title__header {
+    @include h2;
+    color: rgb(1, 14, 43);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 25;
+    text-shadow: 1px 1px 0 #fff;
+  }
+
+  .bulletin__title__download {
+    @include button;
+    width: 9rem;
+    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 25;
+    margin-top: 5rem;
+
+    i {
+      margin-right: 1rem;
     }
-    
+  }
+}
+
+@media (min-width: 571px) {
+  .bulletin {
     .bulletin__title {
-      position: absolute;
-      top:50%;
-      left:50%;
-      transform: translate(-50%, -50%);
-      width: auto;
-      height: 40vh;
-      opacity: .9;
-      z-index: 20;
-    }
+      height: 50vh;
 
-    .bulletin__title__header {
-      @include h2;
-      color: rgb(1, 14, 43);
-      position: absolute;
-      top:50%;
-      left:50%;
-      transform: translate(-50%, -50%);
-      z-index: 25;
-      font-family: 'Black Ops One', cursive;
-      text-shadow: 1px 1px 0 #555;
-    }
+      .bulletin__title__background {
+        height: 40rem;
+      }
 
-    .bulletin__title__download {
-      @include button;
-      width: 9rem;
-      text-decoration: none;
-      position: absolute;
-      top:50%;
-      left:50%;
-      transform: translate(-50%, -50%);
-      z-index: 25;
-      margin-top: 5rem;
-
-      i {
-        margin-right: 1rem;
+      .bulletin__title__download {
+        margin-top: 14rem;
       }
     }
   }
-
-  @media (min-width: 571px) {
-    .bulletin {
-
-      .bulletin__title {
-        height: 50vh;
-
-        .bulletin__title__background {
-          height: 40rem;
-        }
-
-        .bulletin__title__download {
-          margin-top: 14rem;
-        }
-      }
-    }
-  }
+}

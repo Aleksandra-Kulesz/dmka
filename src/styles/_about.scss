@@ -1,79 +1,79 @@
-  .about {
-    background-image: url("./../assets/backgrounds/about_background.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: auto;
-    width: 100vw;
+.about {
+  background-image: url("./../assets/backgrounds/about_background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: auto;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  .about__container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: center;
+    width: 100%;
 
-    .about__container {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      width: 100%;
+    .about__main {
+      .about__main__header {
+        @include h2;
+        color: white;
+        text-shadow: 1px 1px 0 #000;
+        margin-top: 5rem;
+        padding-left: 0;
+        padding-right: 0;
 
-      .about__main {
-        .about__main__header {
-          @include h2;
-          color: white;
-          text-shadow: 1px 1px 0 #000;
-          margin-top: 5rem;
-          padding-left: 0;
-          padding-right: 0;
-
-          span {
-            color: #ff8d0a;
-          }
-        }
-
-        .about__main__content {
-          @include p;
-
-          &:first-of-type {
-            font-weight: 600;
-            text-align: center;
-          }
+        span {
+          color: #ff8d0a;
         }
       }
 
-      .about__cooperators {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 1);
-        padding-bottom: 10rem;
+      .about__main__content {
+        @include p;
 
-        .about__cooperators--header {
-          font-size: 2.5rem;
-          color: #ff8d0a;
+        &:first-of-type {
+          font-weight: 600;
           text-align: center;
-          margin: 3rem;
-          font-family: 'Black Ops One', cursive;
-          text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
         }
+      }
+    }
 
-        .about__cooperators--logos {
-          width: 100%;
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
-          flex-wrap: wrap;
+    .about__cooperators {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 1);
+      padding-bottom: 10rem;
 
-          .cooperator__logo {
-            height: auto;
-            width: 8rem;
-            padding: 1.5rem;
-          }
+      .about__cooperators--header {
+        font-size: 2.5rem;
+        color: #ff8d0a;
+        text-align: center;
+        margin: 3rem;
+        font-family: "Black Ops One", cursive;
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+      }
+
+      .about__cooperators--logos {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .cooperator__logo {
+          height: auto;
+          width: 8rem;
+          padding: 1.5rem;
         }
       }
     }
   }
+}
 
 @media (min-width: 571px) and (max-width: 750px) {
   .about {
@@ -81,19 +81,17 @@
     height: 100vw;
 
     .about__container {
-        width: 100%;
+      width: 100%;
       .about__main {
         width: 90%;
       }
 
       .about__cooperators {
-
         .about__cooperators--header {
           font-size: 3.5rem;
         }
 
         .about__cooperators--logos {
-
           .cooperator__logo {
             width: 10rem;
           }
@@ -109,7 +107,6 @@
     height: 100vw;
 
     .about__container {
-
       .about__main {
         width: 75%;
 
@@ -119,13 +116,11 @@
       }
 
       .about__cooperators {
-
         .about__cooperators--header {
           font-size: 3.5rem;
         }
 
         .about__cooperators--logos {
-
           .cooperator__logo {
             width: 14rem;
           }

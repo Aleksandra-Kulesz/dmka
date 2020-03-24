@@ -1,4 +1,4 @@
-footer{
+footer {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -12,16 +12,16 @@ footer{
   bottom: 0;
   z-index: 100;
 
-  a{
+  a {
     text-decoration: none;
     color: rgb(1, 14, 43);
-    &:first-of-type{
-     font-family: 'Black Ops One', cursive;
+    &:first-of-type {
+      font-family: 'black_ops_oneregular';
       margin-left: 2rem;
       width: 33%;
       font-size: 2.5rem;
     }
-    &:last-of-type{
+    &:last-of-type {
       width: 33%;
       text-align: right;
       font-weight: lighter;
