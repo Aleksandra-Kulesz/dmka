@@ -8,7 +8,13 @@ html {
 
   body {
     background-color: rgb(1, 14, 43);
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(1, 14, 43, 1) 100%
+    );
     width: 100vw;
+    min-height: 100vh;
     box-sizing: border-box;
     overflow-x: hidden;
 

@@ -1,3 +1,32 @@
+.fade-in-and-out {
+  animation-name: fade-out;
+  animation-duration: 10s;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+  @keyframes fade-out {
+    0% {
+      opacity: 0;
+    }
+
+    5% {
+      opacity: 0;
+    }
+
+    25% {
+      opacity: 1;
+    }
+
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
 main {
   overflow-x: hidden;
   height: 100vh;
@@ -11,6 +40,7 @@ main {
   .main__background {
     width: auto;
     height: 100vh;
+    opacity: 0;
   }
 
   .main__logo {
@@ -28,7 +58,7 @@ main {
     color: rgb(1, 14, 43);
     text-shadow: 0 3px 3px rgba(255, 255, 255, 0.5);
     font-size: 7rem;
-    font-family: 'Black Ops One';
+    font-family: "Black Ops One";
     top: 15rem;
   }
 }

@@ -23,7 +23,7 @@ class Main extends Component {
           currentBg: 0
         });
       }
-    }, 5000);
+    }, 10000);
   }
 
   componentWillUnmount() {
@@ -36,7 +36,7 @@ class Main extends Component {
         <img
           src={this.state.bgs[this.state.currentBg]}
           alt="offshore"
-          className="main__background"/>
+          className="main__background fade-in-and-out"/>
         <img src={logo} alt="logo" className="main__logo" />
         <h1 className="main__header">DMKA</h1>
         <Nav />

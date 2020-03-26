@@ -4,7 +4,7 @@ class ContactForm extends Component {
   state = {
     name: "",
     phone: "",
-    mail: "",
+    email: "",
     message: "",
     errors: [],
     fileNames: [],
@@ -50,23 +50,35 @@ class ContactForm extends Component {
 
     const application = {
       name: this.state.name,
-      mail: this.state.mail,
-      phone: this.statephone,
+      email: this.state.email,
+      phone: this.state.phone,
       position: this.props.position
     };
 
+    console.log(JSON.stringify(application));
+    
+
     fetch("http://panel.dmka.allan690.usermd.net/api/create/job_applications", {
-      headers: {
-        Accept: '*/*',
-        "Content-Type": "application/json",
-        Host: 'panel.dmka.allan690.usermd.net'
-      },
       method: "POST",
-      mode:'no-cors',
+      // mode: "no-cors",
       body: JSON.stringify(application)
     })
       .then(data => {
         console.log(data);
+      //   fetch("http://panel.dmka.allan690.usermd.net/api/create/job_applications", {
+      //     method: "POST",
+      //     // mode: "no-cors",
+      //     body: JSON.stringify(application)
+      //   })
+      //     .then(data => {
+      //       console.log(data);
+      //     })
+      //     .catch(err => {
+      //       console.log(err);
+      //     });
+    
+      //   this.handleModalClose();
+      // };
       })
       .catch(err => {
         console.log(err);
@@ -117,7 +129,7 @@ class ContactForm extends Component {
           <i className="fas fa-at" />
           <input
             id="email"
-            type="e-mail"
+            type="email"
             onChange={this.handleChange}
             name="email"
             className="form__input--email"
