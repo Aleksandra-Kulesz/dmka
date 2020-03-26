@@ -3,6 +3,7 @@ import { NavMobile } from "./Nav_mobile";
 import { Footer } from "./Footer";
 import { JobOffer } from "./JobOffer";
 import { Link } from "react-router-dom";
+import { SpinnerRoundFilled } from "spinners-react";
 
 class JobOffers extends Component {
   state = {
@@ -86,12 +87,13 @@ class JobOffers extends Component {
       );
     } else {
       return (
-        <p className="jobOffers__paragraph">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-          assumenda vero accusantium! Magnam laborum aut totam enim eveniet illo
-          necessitatibus sunt voluptatum architecto sint voluptatibus
-          perspiciatis molestiae et, autem libero?
-        </p>
+        <div className='container'>
+          <SpinnerRoundFilled
+            color="#ff8d0a"
+            size={90}
+            speed={97}
+            thickness={180}/>
+        </div>
       );
     }
   }
