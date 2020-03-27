@@ -8,7 +8,8 @@ class ContactForm extends Component {
     message: "",
     errors: [],
     fileNames: [],
-    fileInput: React.createRef()
+    fileInput: React.createRef(),
+    // status: 0,
   };
 
   handleChange = e => {
@@ -56,29 +57,45 @@ class ContactForm extends Component {
     };
 
     console.log(JSON.stringify(application));
-    
+    const fileInput = document.getElementById("file");
 
     fetch("http://panel.dmka.allan690.usermd.net/api/create/job_applications", {
       method: "POST",
-      // mode: "no-cors",
       body: JSON.stringify(application)
     })
+      .then(response => response.json())
       .then(data => {
-        console.log(data);
-      //   fetch("http://panel.dmka.allan690.usermd.net/api/create/job_applications", {
-      //     method: "POST",
-      //     // mode: "no-cors",
-      //     body: JSON.stringify(application)
-      //   })
-      //     .then(data => {
-      //       console.log(data);
-      //     })
-      //     .catch(err => {
-      //       console.log(err);
-      //     });
-    
-      //   this.handleModalClose();
-      // };
+        const id = data.id;
+
+        const link = `http://panel.dmka.allan690.usermd.net/api/media/job_applications/${id}`;
+
+        const formdata = new FormData();
+        for (let i = 0; i < fileInput.files.length; i++) {
+          formdata.append(
+            "attachments[]",
+            fileInput.files[i],
+            fileInput.files[i].name
+          );
+        }
+
+        const requestOptions = {
+          method: "POST",
+          body: formdata,
+          redirect: "follow"
+        };
+
+        fetch(link, requestOptions)
+          .then(response =>{
+            response.text()
+            console.log(response.status);
+            // this.setState({status:response.status});
+            // if (this.state.status >= 200 && this.state.status < 300) {
+            //   window.alert('Dziękujemy za wysłane zgłoszenie.')
+            // } else {
+            //   window.alert('Coś poszło nie tak, spróbuj ponownie później lub skorzystaj z innej formy kontaktu.')
+            // }
+            }).then(result => console.log(result))
+          .catch(error => console.log("error", error));
       })
       .catch(err => {
         console.log(err);
@@ -161,6 +178,7 @@ class ContactForm extends Component {
               multiple
               className="form__input__fileLoader"
               name="file"
+              id="file"
               ref={this.state.fileInput}
               onChange={e => {
                 this.handleInputFileChange(e);
@@ -168,13 +186,19 @@ class ContactForm extends Component {
             />
           </label>
           <div className="form__input__files">
-            {this.state.fileNames.map((e, i) => {
-              return (
-                <p className="form__input__file" key={i}>
-                  {e}
-                </p>
-              );
-            })}
+            {this.state.fileNames.length > 0 ? (
+              this.state.fileNames.map((e, i) => {
+                return (
+                  <p className="form__input__file" key={i}>
+                    {e}
+                  </p>
+                );
+              })
+            ) : (
+              <p className="form__input__file">
+                Aby załączyć więcej niż jeden plik, zaznacz je równocześnie w
+                okienku wyboru.</p>
+            )}
           </div>
         </div>
 

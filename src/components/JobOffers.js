@@ -15,7 +15,7 @@ class JobOffers extends Component {
   handleSortOffer = arr => {
     const currentTypeOfferArr = [];
 
-    this.state.jobOffers.map((e, i) => {
+    arr.map((e) => {
       return this.props.header === e.attributes.position
         ? currentTypeOfferArr.push(e)
         : null;
@@ -36,7 +36,6 @@ class JobOffers extends Component {
         }
       })
       .then(data => {
-        console.log(data.data);
         this.setState(
           { jobOffers: data.data },
           this.setState({ isLoaded: true })
