@@ -25,12 +25,11 @@ class JobOffer extends Component {
       classes = "job__description--open";
     }
 
+    const offerName = `${this.props.job.attributes.position} - ${this.props.job.attributes.place}`
+
     return (
       <li className="job" onClick={e => this.handleOfferOpen(e)}>
-        <h3 className="job__name">
-          {this.props.job.attributes.position} -{" "}
-          {this.props.job.attributes.place}
-        </h3>
+        <h3 className="job__name">{offerName}</h3>
 
         <p className={classes}>
           <span>Miejsce pracy: {this.props.job.attributes.place}</span>
@@ -47,6 +46,8 @@ class JobOffer extends Component {
             type="modal"
             position={this.props.job.attributes.position}
             closeModal={this.handleModalClose}
+            handleInfoModal={this.props.handleInfoModal}
+            offer_name={offerName}
           />
         ) : null}
       </li>

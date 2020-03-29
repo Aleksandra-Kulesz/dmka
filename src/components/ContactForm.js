@@ -9,7 +9,7 @@ class ContactForm extends Component {
     errors: [],
     fileNames: [],
     fileInput: React.createRef(),
-    // status: 0,
+    status: 0
   };
 
   handleChange = e => {
@@ -35,6 +35,12 @@ class ContactForm extends Component {
     }
   };
 
+  handleInfoModal = status => {
+    if (typeof this.props.handleInfoModal === "function") {
+      this.props.handleInfoModal(status);
+    }
+  };
+
   handleFormSubmit = e => {
     e.preventDefault();
     const errors = [];
@@ -51,10 +57,13 @@ class ContactForm extends Component {
 
     const application = {
       name: this.state.name,
+      offer_name: this.props.offer_name,
       email: this.state.email,
       phone: this.state.phone,
       position: this.props.position
     };
+
+    console.log(application);
 
     console.log(JSON.stringify(application));
     const fileInput = document.getElementById("file");
@@ -85,16 +94,14 @@ class ContactForm extends Component {
         };
 
         fetch(link, requestOptions)
-          .then(response =>{
-            response.text()
+          .then(response => {
+            response.text();
             console.log(response.status);
-            // this.setState({status:response.status});
-            // if (this.state.status >= 200 && this.state.status < 300) {
-            //   window.alert('Dziękujemy za wysłane zgłoszenie.')
-            // } else {
-            //   window.alert('Coś poszło nie tak, spróbuj ponownie później lub skorzystaj z innej formy kontaktu.')
-            // }
-            }).then(result => console.log(result))
+            const status = response.status;
+            console.log(status);
+            this.handleInfoModal(status);
+          })
+          .then(result => console.log(result))
           .catch(error => console.log("error", error));
       })
       .catch(err => {
@@ -197,7 +204,8 @@ class ContactForm extends Component {
             ) : (
               <p className="form__input__file">
                 Aby załączyć więcej niż jeden plik, zaznacz je równocześnie w
-                okienku wyboru.</p>
+                okienku wyboru.
+              </p>
             )}
           </div>
         </div>
