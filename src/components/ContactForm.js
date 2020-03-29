@@ -56,11 +56,11 @@ class ContactForm extends Component {
   handleFormSubmit = e => {
     e.preventDefault();
     const errors = [];
-    const { name, phone, message } = this.state;
+    const { name, phone } = this.state;
 
-    if (name.length < 3 || phone.length < 9 || message.length < 3) {
+    if (name.length < 3 || phone.length < 9) {
       errors.push(
-        "Pola imię i nazwisko oraz wiadomość muszą składać się z co najmniej 3. znaków, a pole numer telefonu z co najmniej 9. cyfr."
+        "Pole imię i nazwisko musi składać się z co najmniej 3. znaków, a pole numer telefonu z co najmniej 9. cyfr."
       );
       this.setState({
         errors
