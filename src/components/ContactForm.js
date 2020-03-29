@@ -60,11 +60,13 @@ class ContactForm extends Component {
 
     if (name.length < 3 || phone.length < 9 || message.length < 3) {
       errors.push(
-        "Pola imię i nazwisko oraz wiadomość muszą składać się z co najmniej 3 znaków, a pole numer telefonu z co najmniej 9."
+        "Pola imię i nazwisko oraz wiadomość muszą składać się z co najmniej 3. znaków, a pole numer telefonu z co najmniej 9. cyfr."
       );
       this.setState({
         errors
       });
+
+      return
     }
 
     if (this.props.type !== "element") {
