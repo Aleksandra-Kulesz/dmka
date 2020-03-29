@@ -51,7 +51,7 @@ class JobOffers extends Component {
         if (r.ok === true) {
           return r.json();
         } else {
-          throw new Error("Do głębokiego dupska");
+          throw new Error("err");
         }
       })
       .then(data => {
