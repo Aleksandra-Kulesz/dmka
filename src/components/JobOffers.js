@@ -28,7 +28,6 @@ class JobOffers extends Component {
   };
 
   handleOpenInfoModal = status => {
-
     let infoModalType = "";
 
     if (status >= 200 && status < 300) {
@@ -41,7 +40,7 @@ class JobOffers extends Component {
   };
 
   handleInfoModalClose = () => {
-    this.setState({ isInfoModalOpen: false})
+    this.setState({ isInfoModalOpen: false });
   };
 
   componentDidMount() {
@@ -72,7 +71,7 @@ class JobOffers extends Component {
       <>
         <p className="jobOffers__paragraph">
           Aktualnie brak ofert w tej kategorii, aplikuj z wyprzedzeniem przez
-          formularz kontaktowy.
+          wiadomość email.
         </p>
         <Link to="/contact">
           <button className="btn">Aplikuj!</button>
@@ -109,7 +108,10 @@ class JobOffers extends Component {
           </div>
 
           {this.state.isInfoModalOpen ? (
-            <InfoModal type={this.state.infoModalType} closeModal={this.handleInfoModalClose}/>
+            <InfoModal
+              type={this.state.infoModalType}
+              closeModal={this.handleInfoModalClose}
+            />
           ) : null}
 
           <Footer />

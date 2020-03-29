@@ -4,7 +4,7 @@
   animation-delay: 0s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-fill-mode: backwards;
+  animation-fill-mode: forwards;
   @keyframes fade-out {
     0% {
       opacity: 0;
@@ -18,10 +18,13 @@
       opacity: 1;
     }
 
-    80% {
+    75% {
       opacity: 1;
     }
-    100% {
+    95% {
+      opacity: 0;
+    }
+    100%{
       opacity: 0;
     }
   }

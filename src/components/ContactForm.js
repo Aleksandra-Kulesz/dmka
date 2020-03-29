@@ -41,6 +41,18 @@ class ContactForm extends Component {
     }
   };
 
+  handleClearForm = () => {
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const phoneInput = document.getElementById("phone");
+    const messageInput = document.getElementById("message");
+
+    nameInput.value = '';
+    emailInput.value = '';
+    phoneInput.value = '';
+    messageInput.value = '';
+  };
+
   handleFormSubmit = e => {
     e.preventDefault();
     const errors = [];
@@ -55,60 +67,83 @@ class ContactForm extends Component {
       });
     }
 
-    const application = {
-      name: this.state.name,
-      offer_name: this.props.offer_name,
-      email: this.state.email,
-      phone: this.state.phone,
-      position: this.props.position
-    };
+    if (this.props.type !== "element") {
+      const application = {
+        name: this.state.name,
+        offer_name: this.props.offer_name,
+        email: this.state.email,
+        phone: this.state.phone,
+        position: this.props.position
+      };
 
-    console.log(application);
+      const fileInput = document.getElementById("file");
 
-    console.log(JSON.stringify(application));
-    const fileInput = document.getElementById("file");
-
-    fetch("http://panel.dmka.allan690.usermd.net/api/create/job_applications", {
-      method: "POST",
-      body: JSON.stringify(application)
-    })
-      .then(response => response.json())
-      .then(data => {
-        const id = data.id;
-
-        const link = `http://panel.dmka.allan690.usermd.net/api/media/job_applications/${id}`;
-
-        const formdata = new FormData();
-        for (let i = 0; i < fileInput.files.length; i++) {
-          formdata.append(
-            "attachments[]",
-            fileInput.files[i],
-            fileInput.files[i].name
-          );
-        }
-
-        const requestOptions = {
+      fetch(
+        "http://panel.dmka.allan690.usermd.net/api/create/job_applications",
+        {
           method: "POST",
-          body: formdata,
-          redirect: "follow"
-        };
+          body: JSON.stringify(application)
+        }
+      )
+        .then(response => response.json())
+        .then(data => {
+          const id = data.id;
 
-        fetch(link, requestOptions)
-          .then(response => {
-            response.text();
-            console.log(response.status);
-            const status = response.status;
-            console.log(status);
-            this.handleInfoModal(status);
-          })
-          .then(result => console.log(result))
-          .catch(error => console.log("error", error));
+          const link = `http://panel.dmka.allan690.usermd.net/api/media/job_applications/${id}`;
+
+          const formdata = new FormData();
+          for (let i = 0; i < fileInput.files.length; i++) {
+            formdata.append(
+              "attachments[]",
+              fileInput.files[i],
+              fileInput.files[i].name
+            );
+          }
+
+          const requestOptions = {
+            method: "POST",
+            body: formdata,
+            redirect: "follow"
+          };
+
+          fetch(link, requestOptions)
+            .then(response => {
+              response.text();
+              console.log(response.status);
+              const status = response.status;
+              console.log(status);
+              this.handleInfoModal(status);
+            })
+            .then(result => console.log(result))
+            .catch(error => console.log("error", error));
+        })
+        .catch(err => {
+          console.log(err);
+        });
+
+      this.handleModalClose();
+    } else {
+      const message = {
+        name: this.state.name,
+        email: this.state.email,
+        phone: this.state.phone,
+        message: this.state.message
+      };
+
+      fetch("http://panel.dmka.allan690.usermd.net/api/create/contact_forms", {
+        method: "POST",
+        body: JSON.stringify(message)
       })
-      .catch(err => {
-        console.log(err);
-      });
+        .then(response => response.json())
+        .then(result => {
+          const status = result.id;
+          console.log(status);
+          this.handleInfoModal(status);
+        })
+        .catch(error => console.log("error", error));
+    }
 
-    this.handleModalClose();
+    this.handleClearForm();
   };
 
   render() {
@@ -176,40 +211,41 @@ class ContactForm extends Component {
           "null"
         )}
 
-        <div className="form__field">
-          <label className="form__input__fileLoader--label">
-            {" "}
-            <i className="fas fa-file-upload" /> Wybierz plik
-            <input
-              type="file"
-              multiple
-              className="form__input__fileLoader"
-              name="file"
-              id="file"
-              ref={this.state.fileInput}
-              onChange={e => {
-                this.handleInputFileChange(e);
-              }}
-            />
-          </label>
-          <div className="form__input__files">
-            {this.state.fileNames.length > 0 ? (
-              this.state.fileNames.map((e, i) => {
-                return (
-                  <p className="form__input__file" key={i}>
-                    {e}
-                  </p>
-                );
-              })
-            ) : (
-              <p className="form__input__file">
-                Aby załączyć więcej niż jeden plik, zaznacz je równocześnie w
-                okienku wyboru.
-              </p>
-            )}
+        {this.props.type === "element" ? null : (
+          <div className="form__field">
+            <label className="form__input__fileLoader--label">
+              {" "}
+              <i className="fas fa-file-upload" /> Wybierz plik
+              <input
+                type="file"
+                multiple
+                className="form__input__fileLoader"
+                name="file"
+                id="file"
+                ref={this.state.fileInput}
+                onChange={e => {
+                  this.handleInputFileChange(e);
+                }}
+              />
+            </label>
+            <div className="form__input__files">
+              {this.state.fileNames.length > 0 ? (
+                this.state.fileNames.map((e, i) => {
+                  return (
+                    <p className="form__input__file" key={i}>
+                      {e}
+                    </p>
+                  );
+                })
+              ) : (
+                <p className="form__input__file">
+                  Aby załączyć więcej niż jeden plik, zaznacz je równocześnie w
+                  okienku wyboru.
+                </p>
+              )}
+            </div>
           </div>
-        </div>
-
+        )}
         {this.state.errors.length > 0 ? (
           <p className="form__errors">{this.state.errors.map(e => e)}</p>
         ) : null}

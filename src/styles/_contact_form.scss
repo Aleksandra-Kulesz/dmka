@@ -71,7 +71,6 @@
       color: rgb(1, 14, 43);
       text-align: center;
       outline: none;
-      width: 100%;
       border: 1px solid #ff8d0a;
 
       &::placeholder {
@@ -152,7 +151,7 @@
     }
 
     .form__field {
-      width: 50%;
+      width: 40%;
     }
   }
 
