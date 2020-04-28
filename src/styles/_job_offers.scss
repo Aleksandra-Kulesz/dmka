@@ -4,21 +4,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(1, 14, 43, 1) 100%
-  );
+  background-color:#ccc;
 
   .jobOffers__header {
     @include h2;
-    color: #ff8d0a;
-    text-shadow: 1px 1px 0 black;
     margin-top: 5rem;
+    margin-bottom: 5rem;
   }
 
   .jobOffers__paragraph {
     @include p;
+    margin-bottom: 3rem;
   }
 
   .jobOffers__lists {
@@ -43,24 +39,19 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        cursor: pointer;
 
         .job__name {
           @include h2;
           font-size: 1.8rem;
           margin-bottom: 1rem;
           background-color: #ff8d0a;
-          border: 1px solid darkblue;
+          border: 1px solid #444;
           :hover{
             background-color: #ee7c09;
           }
         }
 
         .job__description {
-          display: none;
-        }
-
-        .job__description--open {
           padding-left: 1rem;
           font-size: 1.5rem;
           margin-bottom: 1rem;
@@ -74,7 +65,7 @@
 
         .job_application {
           @include button;
-          border: 1px solid darkblue;
+          // border: 1px solid darkblue;
         }
       }
     }
@@ -84,11 +75,7 @@
 .container {
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(1, 14, 43, 1) 100%
-  );
+  background-color:#eee;
   display: flex;
   justify-content: center;
   align-items: center;

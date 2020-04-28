@@ -97,10 +97,6 @@ class JobOffers extends Component {
         <section className="jobOffers">
           <NavMobile />
           <h2 className="jobOffers__header">{this.props.header}</h2>
-          <p className="jobOffers__paragraph">
-            Naciśnij na nagłówek ogłoszenia, żeby dowiedzieć się więcej o
-            ofercie.
-          </p>
           <div className="jobOffers__lists">
             {this.state.currentTypeOfferArr.length === 0
               ? infoParagraph

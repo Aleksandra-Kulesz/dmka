@@ -9,19 +9,19 @@ class ContactForm extends Component {
     errors: [],
     fileNames: [],
     fileInput: React.createRef(),
-    status: 0
+    status: 0,
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
-  handleInputFileChange = e => {
+  handleInputFileChange = (e) => {
     const loadedFiles = [...e.target.files];
     const fileNames = [];
-    loadedFiles.map(e => {
+    loadedFiles.map((e) => {
       fileNames.push(e.name);
       return null;
     });
@@ -35,7 +35,7 @@ class ContactForm extends Component {
     }
   };
 
-  handleInfoModal = status => {
+  handleInfoModal = (status) => {
     if (typeof this.props.handleInfoModal === "function") {
       this.props.handleInfoModal(status);
     }
@@ -47,13 +47,15 @@ class ContactForm extends Component {
     const phoneInput = document.getElementById("phone");
     const messageInput = document.getElementById("message");
 
-    nameInput.value = '';
-    emailInput.value = '';
-    phoneInput.value = '';
-    messageInput.value = '';
+    nameInput.value = "";
+    emailInput.value = "";
+    phoneInput.value = "";
+    if (this.props.type === "element") {
+      messageInput.value = "";
+    }
   };
 
-  handleFormSubmit = e => {
+  handleFormSubmit = (e) => {
     e.preventDefault();
     const errors = [];
     const { name, phone } = this.state;
@@ -63,10 +65,10 @@ class ContactForm extends Component {
         "Pole imię i nazwisko musi składać się z co najmniej 3. znaków, a pole numer telefonu z co najmniej 9. cyfr."
       );
       this.setState({
-        errors
+        errors,
       });
 
-      return
+      return;
     }
 
     if (this.props.type !== "element") {
@@ -75,7 +77,7 @@ class ContactForm extends Component {
         offer_name: this.props.offer_name,
         email: this.state.email,
         phone: this.state.phone,
-        position: this.props.position
+        position: this.props.position,
       };
 
       const fileInput = document.getElementById("file");
@@ -84,11 +86,11 @@ class ContactForm extends Component {
         "http://panel.dmka.allan690.usermd.net/api/create/job_applications",
         {
           method: "POST",
-          body: JSON.stringify(application)
+          body: JSON.stringify(application),
         }
       )
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           const id = data.id;
 
           const link = `http://panel.dmka.allan690.usermd.net/api/media/job_applications/${id}`;
@@ -105,21 +107,21 @@ class ContactForm extends Component {
           const requestOptions = {
             method: "POST",
             body: formdata,
-            redirect: "follow"
+            redirect: "follow",
           };
 
           fetch(link, requestOptions)
-            .then(response => {
+            .then((response) => {
               response.text();
               console.log(response.status);
               const status = response.status;
               console.log(status);
               this.handleInfoModal(status);
             })
-            .then(result => console.log(result))
-            .catch(error => console.log("error", error));
+            .then((result) => console.log(result))
+            .catch((error) => console.log("error", error));
         })
-        .catch(err => {
+        .catch((err) => {
           console.log(err);
         });
 
@@ -129,20 +131,20 @@ class ContactForm extends Component {
         name: this.state.name,
         email: this.state.email,
         phone: this.state.phone,
-        message: this.state.message
+        message: this.state.message,
       };
 
       fetch("http://panel.dmka.allan690.usermd.net/api/create/contact_forms", {
         method: "POST",
-        body: JSON.stringify(message)
+        body: JSON.stringify(message),
       })
-        .then(response => response.json())
-        .then(result => {
+        .then((response) => response.json())
+        .then((result) => {
           const status = result.id;
           console.log(status);
           this.handleInfoModal(status);
         })
-        .catch(error => console.log("error", error));
+        .catch((error) => console.log("error", error));
     }
 
     this.handleClearForm();
@@ -151,7 +153,9 @@ class ContactForm extends Component {
   render() {
     return (
       <form
-        className={this.props.type === "element" ? "form" : "form modal"}
+        className={
+          this.props.type === "element" ? "form slide-left" : "form modal"
+        }
         onSubmit={this.handleFormSubmit}
       >
         <h2 className="form__header">
@@ -209,15 +213,13 @@ class ContactForm extends Component {
               placeholder="Tutaj wpisz swoją wiadomość"
             />
           </div>
-        ) : (
-          "null"
-        )}
+        ) : null}
 
         {this.props.type === "element" ? null : (
           <div className="form__field">
             <label className="form__input__fileLoader--label">
               {" "}
-              <i className="fas fa-file-upload" /> Wybierz plik
+              <i className="fas fa-file-upload" /> Wybierz pliki
               <input
                 type="file"
                 multiple
@@ -225,7 +227,7 @@ class ContactForm extends Component {
                 name="file"
                 id="file"
                 ref={this.state.fileInput}
-                onChange={e => {
+                onChange={(e) => {
                   this.handleInputFileChange(e);
                 }}
               />
@@ -241,15 +243,15 @@ class ContactForm extends Component {
                 })
               ) : (
                 <p className="form__input__file">
-                  Aby załączyć więcej niż jeden plik, zaznacz je równocześnie w
-                  okienku wyboru.
+                  Aby załączyć więcej plików, zaznacz je równocześnie w okienku
+                  wyboru.
                 </p>
               )}
             </div>
           </div>
         )}
         {this.state.errors.length > 0 ? (
-          <p className="form__errors">{this.state.errors.map(e => e)}</p>
+          <p className="form__errors">{this.state.errors.map((e) => e)}</p>
         ) : null}
         <button className="form__submit" onClick={this.handleFormSubmit}>
           <i className="fas fa-arrow-circle-up" />

@@ -12,20 +12,7 @@ class Recruitment extends Component {
     return (
       <section className="recruitment">
         <NavMobile />
-        <div className="recruitment__container">
-          <article className="recruitment__content">
-            <h2 className="recruitment__content__header">
-              Praca w <span>DMKA</span>
-            </h2>
-            <p className="recruitment__content__paragraph">
-              Firma DMKA specjalizuje się w usługach spawalniczo-monterskich.
-            </p>
-            <p className="recruitment__content__paragraph">
-              Jeśli nie widzisz oferty odpowiadającej Twoim umiejętnościom lub
-              zainteresowaniom, aplikuj z wyprzedzeniem za pośrednictwem
-              formularza kontaktowego.
-            </p>
-          </article>
+        <div className="recruitment__container slide-left">
           <aside className="recruitment__offers">
             <h3 className="recruitment__offers--header">Aplikuj!</h3>
             <div className="recruitment__offers--specializations">

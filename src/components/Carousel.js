@@ -1,68 +1,116 @@
 import React, { Component } from "react";
 
-import slide1 from "./../assets/slides/slide1.jpg";
-import slide2 from "./../assets/slides/slide2.jpg";
-import slide3 from "./../assets/slides/slide3.jpg";
-import slide4 from "./../assets/slides/slide4.jpg";
-import slide5 from "./../assets/slides/slide5.jpg";
-import slide6 from "./../assets/slides/slide6.jpg";
-import slide7 from "./../assets/slides/slide7.jpg";
-import slide8 from "./../assets/slides/slide8.jpg";
-import slide9 from "./../assets/slides/slide9.jpg";
-import slide10 from "./../assets/slides/slide10.jpg";
-import slide11 from "./../assets/slides/slide11.jpg";
-import slide12 from "./../assets/slides/slide12.jpg";
-import slide13 from "./../assets/slides/slide13.jpg";
-import slide14 from "./../assets/slides/slide14.jpg";
-import slide15 from "./../assets/slides/slide15.jpg";
+import navikon from "./../assets/logos/navikon_logo.png";
+import midroc from "./../assets/logos/midroc_logo.png";
+import energyMont from "./../assets/logos/energy-mont_logo.png";
+import dynpap from "./../assets/logos/dynpap_logo.png";
+import EPG from "./../assets/logos/EPG_logo.png";
+import thor from "./../assets/logos/thor_logo.png";
+import crist from "./../assets/logos/crist_logo.png";
+import wielospaw from "./../assets/logos/wielospaw_logo.png";
+import WNS from "./../assets/logos/wns_logo.png";
+import stalkon from "./../assets/logos/stalkon_logo.png";
+import skanska from "./../assets/logos/skanska_logo.png";
+import man from "./../assets/logos/man_logo.png";
 
 class Carousel extends Component {
   state = {
     slides: [
-      slide1,
-      slide2,
-      slide3,
-      slide4,
-      slide5,
-      slide6,
-      slide7,
-      slide8,
-      slide9,
-      slide10,
-      slide11,
-      slide12,
-      slide13,
-      slide14,
-      slide15
+      navikon,
+      midroc,
+      energyMont,
+      dynpap,
+      EPG,
+      thor,
+      crist,
+      wielospaw,
+      WNS,
+      stalkon,
+      skanska,
+      man,
     ],
-    currentSlide: 0
+    prevSlide: 0,
+    currentSlide: 1,
+    nextSlide: 2,
   };
 
   handleNextSlide = () => {
-    if (this.state.currentSlide >= this.state.slides.length - 1) {
-      this.setState({ currentSlide: 0 });
+    if (window.innerWidth < 600) {
+      if (this.state.currentSlide > this.state.slides.length - 1) {
+        this.setState({ currentSlide: 0 });
+      } else this.setState({ currentSlide: this.state.currentSlide + 1 });
     } else {
-      this.setState({ currentSlide: this.state.currentSlide + 1 });
+      if (this.state.prevSlide >= this.state.slides.length - 3) {
+        this.setState({ prevSlide: 0 });
+      } else {
+        this.setState({ prevSlide: this.state.prevSlide + 3 });
+      }
+      if (this.state.currentSlide >= this.state.slides.length - 2) {
+        this.setState({ currentSlide: 1 });
+      } else {
+        this.setState({ currentSlide: this.state.currentSlide + 3 });
+      }
+      if (this.state.nextSlide >= this.state.slides.length - 1) {
+        this.setState({ nextSlide: 2 });
+      } else {
+        this.setState({ nextSlide: this.state.nextSlide + 3 });
+      }
     }
   };
 
   handlePreviousSlide = () => {
-    if (this.state.currentSlide <= 0) {
-      this.setState({ currentSlide: this.state.slides.length - 1 });
-    } else this.setState({ currentSlide: this.state.currentSlide - 1 });
+    if (window.innerWidth < 600) {
+      if (this.state.currentSlide <= 0) {
+        this.setState({ currentSlide: this.state.slides.length - 1 });
+      } else this.setState({ currentSlide: this.state.currentSlide - 1 });
+    } else {
+      console.log(this.state.slides.length - 3)
+      if (this.state.prevSlide <= 0) {
+        this.setState({ prevSlide: this.state.slides.length - 3});
+      } else {
+        this.setState({ prevSlide: this.state.prevSlide - 3 });
+      }
+      if (this.state.currentSlide <= 1) {
+        this.setState({ currentSlide: this.state.slides.length - 2});
+      } else {
+        this.setState({ currentSlide: this.state.currentSlide - 3 });
+      }
+      if (this.state.nextSlide <= 2) {
+        this.setState({ nextSlide: this.state.slides.length - 1});
+      } else {
+        this.setState({ nextSlide: this.state.nextSlide - 3 });
+      }
+    }
   };
 
   render() {
     return (
       <section className="about__carousel">
-        <h2>Galeria</h2>
-        <p>Kilka ujęć z naszego dnia pracy.</p>
+        <h2>Zaufali nam:</h2>
         <div className="carousel__container">
+          {window.innerWidth<600? <img
+            className="carousel__slide"
+            src={this.state.slides[this.state.currentSlide]}
+            alt="from work"
+          />:<><img
+            className="carousel__slide"
+            src={this.state.slides[this.state.prevSlide]}
+            alt="from work"
+          />
+
           <img
             className="carousel__slide"
             src={this.state.slides[this.state.currentSlide]}
             alt="from work"
           />
+          <img
+            className="carousel__slide"
+            src={this.state.slides[this.state.nextSlide]}
+            alt="from work"
+          />
+          </>}
+          
+
           <div
             className="carousel__arrow left"
             onClick={this.handlePreviousSlide}

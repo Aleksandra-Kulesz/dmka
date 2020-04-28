@@ -3,68 +3,68 @@
   flex-direction: column;
   align-items: center;
   width: 100vw;
+  background-color: #eee;
 
   .facebook {
     position: sticky;
-    background-color: #ff8d0a;
+    top:15rem;
+    background-color: rgba(255, 141, 10, .9);
     padding: 1.5rem;
     font-size: 2.5rem;
-    color: rgb(1, 14, 43);
-    top: 15rem;
+    color: #444;
     align-self: flex-start;
     z-index: 80;
-    border: 1px solid rgb(1, 14, 43);
-  }
-
-  .contact__details {
-    width: 100%;
-    color: white;
-    text-align: center;
-    background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(1, 14, 43, 1) 100%
-    );
-
-    .contact__details__background {
-      width: 90%;
-      height: auto;
-      opacity: .75;
-      margin: 3rem 0;
-      position: relative;
+    border: 1px solid #444;
+    &:hover{
+      color: black;
+      border: 1px solid black;
     }
-
-    .contact__details__content {
-      position: absolute;
-      top: 15rem;
+  }
+  .contact__wrapper {
+    .contact__details {
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      color: black;
+      text-align: center;
+      background-color: #eee;
+      padding-bottom: 6rem;
 
-      .contact__header {
-        @include h2;
-        color: #ff8d0a;
-        text-shadow: 1px 1px 0 black;
+      .contact__details__background {
+        width: 90%;
+        height: auto;
+        opacity: 0.75;
+        position: relative;
       }
 
-      .contact__details--mail {
-        font-size: 2rem;
-        padding: 0.5rem;
-      }
+      .contact__details__content {
+        position: absolute;
+        top: 5rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-      .contact__details--phone,
-      .contact__details--address,
-      .contact__details--nip {
-        font-size: 1.2rem;
-        display: block;
-        text-transform: uppercase;
-        padding: 0.5rem;
-        letter-spacing: 1px;
-      }
+        .contact__header {
+          @include h2;
+        }
 
-      .contact__details--phone {
-        margin-top: 2rem;
+        .contact__details--mail {
+          font-size: 2rem;
+          padding: 0.5rem;
+        }
+
+        .contact__details--phone,
+        .contact__details--address,
+        .contact__details--nip {
+          font-size: 1.2rem;
+          display: block;
+          text-transform: uppercase;
+          padding: 0.5rem;
+          letter-spacing: 1px;
+        }
+
+        .contact__details--phone {
+          margin-top: 2rem;
+        }
       }
     }
   }
@@ -73,31 +73,42 @@
 @media (min-width: 571px) {
   .contact {
     .facebook {
+      position: absolute;
       padding: 2.5rem;
     }
 
-    .contact__details {
-      height: 70vh;
+    .contact__wrapper {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100vw;
+      height: calc(100vh - 14.5rem);
+      .contact__details {
+        height: 100%;
+        width: 50vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-      .contact__details__background {
-        height: 90%;
-        width: auto;
-        margin: 0 0 5rem 0;
-      }
-
-      .contact__details__content {
-        margin-top: 7rem;
-
-        .contact__details--mail {
-          font-size: 2.5rem;
+        .contact__details__background {
+          height: 90%;
+          width: auto;
         }
 
-        .contact__details--phone,
-        .contact__details--address,
-        .contact__details--nip {
-          font-size: 1.5rem;
+        .contact__details__content {
+          margin-top: 6rem;
+
+          .contact__details--mail {
+            font-size: 2.5rem;
+          }
+
+          .contact__details--phone,
+          .contact__details--address,
+          .contact__details--nip {
+            font-size: 1.5rem;
+          }
         }
       }
     }
   }
 }
+

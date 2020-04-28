@@ -4,22 +4,19 @@
   align-items: center;
   justify-content: flex-start;
   width: 100vw;
-  background-image: url(./../assets/backgrounds/form_background.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding-bottom: 10rem;
-  border-top: 1px solid #ff8d0a;
+  background-color: #ddd;
+  padding-bottom: 6rem;
 
   .form__header {
     @include h2;
-    margin: 3rem 0;
-    color: #ff8d0a;
-    text-shadow: 1px 1px 0 black;
+    color: #444;
+    border-bottom: 1px solid orange;
+    margin-bottom: 3rem;
+    width: 75%;
   }
 
   .form__field {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     font-size: 2.5rem;
     color: rgb(1, 14, 43);
     display: flex;
@@ -30,10 +27,10 @@
       flex-direction: column;
       background-color: transparent;
       font-size: 1.4rem;
-      color: white;
-
+      color: black;
+      margin:0;
       p {
-        margin: 0.5rem;
+        margin: 1rem 0;
         width: 100%;
         text-align: center;
       }
@@ -41,7 +38,7 @@
 
     i {
       padding: 1rem;
-      background: #ff8d0a;
+      background: #444;
       color: white;
       min-width: 4rem;
       text-align: center;
@@ -50,7 +47,7 @@
     input {
       padding: 1rem;
       outline: none;
-      border: 1px solid #ff8d0a;
+      border: 1px solid #444;
       width: 100%;
 
       &::placeholder {
@@ -61,17 +58,17 @@
       }
 
       &:focus {
-        border: 1px solid #ff8d0a;
+        border: 1px solid #444;
       }
     }
 
     textarea {
-      min-height: 10rem;
+      min-height: 8rem;
       padding: 1rem;
       color: rgb(1, 14, 43);
       text-align: center;
       outline: none;
-      border: 1px solid #ff8d0a;
+      border: 1px solid #444;
 
       &::placeholder {
         color: rgb(1, 14, 43);
@@ -81,18 +78,19 @@
       }
 
       &:focus {
-        border: px solid darkorange;
+        border: 1px solid #444;
       }
     }
   }
 
   .form__errors {
     @include p;
+    font-size: 1.2rem;
   }
 
   .form__submit {
     @include button;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     color: white;
 
     i {
@@ -123,13 +121,12 @@
 
 .modal {
   position: absolute;
-  top: 10rem;
+  top: -15rem;
   left: 50%;
   transform: translate(-50%, 0);
-  background-color: black;
+  background-color: #eee;
   width: 100vw;
   border: 1px solid #ff8d0a;
-  margin-bottom: 10rem;
 }
 
 .fa-times-circle {
@@ -142,16 +139,49 @@
 
 @media (min-width: 571px) {
   .form {
-    height: 100vh;
+    height: calc(100vh - 14.5rem);
     justify-content: center;
     background-position: center;
+    width: 50vw;
 
     .form__header {
-      margin: 3rem 0;
+      margin: 2rem 0;
+      font-size: 2.5rem;
+      width: 60%;
     }
 
     .form__field {
-      width: 40%;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      color: rgb(1, 14, 43);
+      display: flex;
+      justify-content: center;
+
+      textarea {
+        min-height: 5rem;
+      }
+    }
+  }
+
+  .modal {
+    width: 75vw;
+  }
+}
+
+@media (min-width: 800px) {
+  .form {
+    height: calc(100vh - 14.5rem);
+    justify-content: center;
+    background-position: center;
+    width: 50vw;
+
+    .form__header {
+      margin: 3rem 0;
+      font-size: 3.5rem;
+    }
+
+    .form__field {
+      width: 55%;
     }
   }
 

@@ -3,12 +3,7 @@ import { ContactForm } from "./ContactForm";
 
 class JobOffer extends Component {
   state = {
-    isOfferOpen: false,
     isModalOpen: false
-  };
-
-  handleOfferOpen = () => {
-    this.setState({ isOfferOpen: !this.state.isOfferOpen });
   };
 
   handleModalOpen = () => {
@@ -28,7 +23,7 @@ class JobOffer extends Component {
     const offerName = `${this.props.job.attributes.position} - ${this.props.job.attributes.place}`
 
     return (
-      <li className="job" onClick={e => this.handleOfferOpen(e)}>
+      <li className="job slide-left">
         <h3 className="job__name">{offerName}</h3>
 
         <p className={classes}>

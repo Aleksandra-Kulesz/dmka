@@ -4,18 +4,61 @@
 
 html {
   font-size: 10px;
-  font-family: 'Raleway';
+  font-family: "Raleway", sans-serif;
 
   body {
-    background-color: rgb(1, 14, 43);
-    background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(1, 14, 43, 1) 100%
-    );
+    background-color: #fff;
     width: 100vw;
     box-sizing: border-box;
     overflow-x: hidden;
+
+    @keyframes slide-left {
+      0% {
+        -webkit-transform: translateX(100px);
+        transform: translateX(100px);
+      }
+      100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+    }
+
+    .slide-left {
+      -webkit-animation: slide-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+              animation: slide-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+    @keyframes slide-right {
+      0% {
+        -webkit-transform: translateX(-100px);
+        transform: translateX(-100px);
+      }
+      100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+    }
+
+    .slide-right {
+      -webkit-animation: slide-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+              animation: slide-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+    @keyframes slide-up {
+      0% {
+        -webkit-transform: translateY(100px);
+        transform: translateY(100px);
+      }
+      100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+    }
+
+    .slide-up {
+      -webkit-animation: slide-up 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+              animation: slide-up 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
 
     @import "styles/main";
     @import "styles/nav_mobile";

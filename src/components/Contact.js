@@ -42,7 +42,8 @@ class Contact extends Component {
         >
           <i className="fab fa-facebook-f" />
         </a>
-        <div className="contact__details">
+        <div className='contact__wrapper'>
+        <div className="contact__details slide-right">
           <img
             src={logo}
             alt="DMKA logo"
@@ -68,6 +69,7 @@ class Contact extends Component {
           type="element"
           handleInfoModal={this.handleOpenInfoModal}
         />
+        </div>
 
         {this.state.isInfoModalOpen?<InfoModal type={this.state.infoModalType} closeModal={this.handleInfoModalClose}/>:null}
 

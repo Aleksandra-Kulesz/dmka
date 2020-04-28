@@ -1,86 +1,36 @@
-.fade-in-and-out {
-  animation-name: fade-out;
-  animation-duration: 10s;
-  animation-delay: 0s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
-  @keyframes fade-out {
-    0% {
-      opacity: 0;
-    }
-
-    5% {
-      opacity: 0;
-    }
-
-    25% {
-      opacity: 1;
-    }
-
-    75% {
-      opacity: 1;
-    }
-    95% {
-      opacity: 0;
-    }
-    100%{
-      opacity: 0;
-    }
-  }
-}
-
 main {
   overflow-x: hidden;
+  overflow-y: hidden;
   height: 100vh;
   width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  position: relative;
 
   .main__background {
     width: auto;
-    height: 100vh;
-    opacity: 0;
+    height: 100%;
+    background-image: url(./../assets/backgrounds/main-background2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
-  .main__logo {
-    position: absolute;
-    z-index: 7;
-    height: 20rem;
-    width: auto;
-    opacity: 0.75;
-    top: 5rem;
-  }
-
-  .main__header {
-    position: absolute;
-    z-index: 10;
-    color: rgb(1, 14, 43);
-    text-shadow: 0 3px 3px rgba(255, 255, 255, 0.5);
-    font-size: 7rem;
-    font-family: "Black Ops One";
-    top: 15rem;
+  .main__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+    .main__logo{
+      width: auto;
+      height: 20vh;
+      justify-self: flex-start;
+    }
   }
 }
 
 @media (min-width: 571px) {
   main {
-    justify-content: center;
-
     .main__background {
       width: 100vw;
-      max-height: 100vh;
-    }
-
-    .main__logo {
-      height: 30rem;
-    }
-
-    .main__header {
-      top: 20rem;
+      height: 75vh;
     }
   }
 }

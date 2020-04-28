@@ -1,13 +1,10 @@
 .about {
-  background-image: url("./../assets/backgrounds/about_background.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: auto;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  padding-bottom: 7rem;
+  background-color: white;
 
   .about__container {
     display: flex;
@@ -16,85 +13,76 @@
     align-items: center;
     width: 100%;
 
-    .about__main {
-      .about__main__header {
-        @include h2;
-        color: white;
-        text-shadow: 1px 1px 0 #000;
-        margin-top: 5rem;
-        padding-left: 0;
-        padding-right: 0;
-
-        span {
-          color: #ff8d0a;
-        }
+    .about__header {
+      background-image: url("./../assets/backgrounds/about_background.jpg");
+      background-position: center;
+      width: 100%;
+      height: 20vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 5rem 0;
+      &::after {
+        content: "";
+        width: 100vw;
+        height: 20vh;
+        background-color: rgba($color: #fff, $alpha: 0.3);
+        position: absolute;
       }
-
-      .about__main__content {
-        @include p;
-
-        &:first-of-type {
-          font-weight: 600;
-          text-align: center;
-        }
+      h2 {
+        @include h2;
+        color: black;
       }
     }
 
-    .about__cooperators {
+    .about__row {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 1);
-      padding-bottom: 10rem;
-
-      .about__cooperators--header {
-        font-size: 2.5rem;
-        color: #ff8d0a;
-        text-align: center;
-        margin: 3rem;
-        font-family: "Black Ops One", cursive;
-        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+      margin-bottom: 4rem;
+      &:nth-of-type(2) {
+        .about__img {
+          background-image: url(./../assets/backgrounds/main-background4.jpg);
+        }
+      }
+      &:nth-of-type(3) {
+        .about__img {
+          background-image: url(./../assets/backgrounds/main-background2.jpg);
+        }
+      }
+      &:last-of-type {
+        .about__img {
+          background-image: url(./../assets/backgrounds/main-background3.jpg);
+        }
       }
 
-      .about__cooperators--logos {
-        width: 100%;
+      .about__img {
+        height: 250px;
+        width: 90vw;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        // margin: 2rem;
+        padding: 2rem;
+      }
+
+      .about_parag {
+        margin: 0;
+        padding: 2rem;
+        height: 25rem;
+        width: 90vw;
+        background-color: #eee;
         display: flex;
-        justify-content: space-around;
+        flex-direction: column;
         align-items: center;
-        flex-wrap: wrap;
-
-        .cooperator__logo {
-          height: auto;
-          width: 8rem;
-          padding: 1.5rem;
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: 571px) and (max-width: 750px) {
-  .about {
-    background-position: top;
-    height: 100vw;
-
-    .about__container {
-      width: 100%;
-      .about__main {
-        width: 90%;
-      }
-
-      .about__cooperators {
-        .about__cooperators--header {
-          font-size: 3.5rem;
-        }
-
-        .about__cooperators--logos {
-          .cooperator__logo {
-            width: 10rem;
-          }
+        justify-content: center;
+        @include p;
+        h3 {
+          @include h2;
+          font-size: 2.5rem;
+          padding-bottom: 2rem;
+          margin-bottom: 2rem;
+          border-bottom: 1px solid orange;
         }
       }
     }
@@ -105,26 +93,44 @@
   .about {
     background-position: top;
     height: 100vw;
-
     .about__container {
-      .about__main {
-        margin-top:5rem;
-        width: 75%;
-
-        .about__main__content {
-          margin-bottom: 3rem;
+      .about__header {
+        height: 25vh;
+        &::after{
+          height: 25vh;
         }
       }
 
-      .about__cooperators {
-        .about__cooperators--header {
-          font-size: 3.5rem;
+      .about__row {
+        width: 100vw;
+        justify-content: center;
+        &:nth-of-type(2) {
+          flex-direction: initial;
+          .about__img{
+            margin-right: 2rem;
+          }
+          
+        }
+        &:nth-of-type(3) {
+          flex-direction: row-reverse;
+          .about__img{
+            margin-left: 2rem;
+          }
+        }
+        &:last-of-type {
+          flex-direction: initial;
+          .about__img{
+            margin-right: 2rem;
+          }
         }
 
-        .about__cooperators--logos {
-          .cooperator__logo {
-            width: 14rem;
-          }
+        .about__img {
+          max-width: 40vw;
+          margin: 0;
+        }
+
+        .about_parag {
+          max-width: 40vw;
         }
       }
     }
