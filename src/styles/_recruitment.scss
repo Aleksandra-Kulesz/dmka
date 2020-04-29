@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   background-color: #ccc;
+  overflow: hidden;
 
   .recruitment__container {
     margin-top: 5rem;
@@ -12,6 +13,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    width: 85%;
 
     .recruitment__offers {
       display: flex;
@@ -59,8 +61,10 @@
 
 @media (min-width: 571px) {
   .recruitment {
+    min-height: 100vh;
+    justify-content: flex-start;
+
     .recruitment__container {
-      top: 15vh;
       height: 50%;
       width: 50%;
       .recruitment__offers {

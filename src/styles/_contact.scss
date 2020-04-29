@@ -21,6 +21,7 @@
     }
   }
   .contact__wrapper {
+    overflow-x: hidden;
     .contact__details {
       width: 100%;
       color: black;
@@ -72,6 +73,7 @@
 
 @media (min-width: 571px) {
   .contact {
+    background-color: white;
     .facebook {
       position: absolute;
       padding: 2.5rem;

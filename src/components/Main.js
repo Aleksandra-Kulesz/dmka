@@ -35,7 +35,7 @@ class Main extends Component {
       <main>
         <div className="main__background"/>
         <div className='main__container'>
-         {window.innerWidth>750?<img src={logo} alt="logo" className="main__logo" />:null}
+        <img src={logo} alt="logo" className="main__logo" />
          <Nav />
         </div>         
       </main>

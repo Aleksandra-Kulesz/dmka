@@ -54,7 +54,7 @@ class About extends Component {
             </div>
           </div>
         </div>
-        <Carousel/>
+        <Carousel />
         <Footer />
       </section>
     );

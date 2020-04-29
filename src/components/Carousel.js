@@ -16,18 +16,18 @@ import man from "./../assets/logos/man_logo.png";
 class Carousel extends Component {
   state = {
     slides: [
+      wielospaw,
+      WNS,
+      stalkon,
       navikon,
       midroc,
-      energyMont,
       dynpap,
       EPG,
       thor,
       crist,
-      wielospaw,
-      WNS,
-      stalkon,
       skanska,
       man,
+      energyMont
     ],
     prevSlide: 0,
     currentSlide: 1,
