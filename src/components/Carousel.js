@@ -36,7 +36,7 @@ class Carousel extends Component {
 
   handleNextSlide = () => {
     if (window.innerWidth < 600) {
-      if (this.state.currentSlide > this.state.slides.length - 1) {
+      if (this.state.currentSlide >= this.state.slides.length - 1) {
         this.setState({ currentSlide: 0 });
       } else this.setState({ currentSlide: this.state.currentSlide + 1 });
     } else {
