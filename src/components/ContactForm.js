@@ -159,7 +159,7 @@ class ContactForm extends Component {
         onSubmit={this.handleFormSubmit}
       >
         <h2 className="form__header">
-          {this.props.type === "element" ? "Formularz kontaktowy" : "Aplikuj"}
+          {this.props.type === "element" ? "Formularz kontaktowy biuro" : "Aplikuj"}
         </h2>
 
         {this.props.type === "element" ? null : (

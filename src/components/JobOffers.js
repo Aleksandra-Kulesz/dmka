@@ -70,8 +70,7 @@ class JobOffers extends Component {
     const infoParagraph = (
       <>
         <p className="jobOffers__paragraph">
-          Aktualnie brak ofert w tej kategorii, aplikuj z wyprzedzeniem przez
-          wiadomość email.
+          Brak aktualnych ofert pracy. Zostaw CV na przyszłe rekrutacje.
         </p>
         <Link to="/contact">
           <button className="btn">Aplikuj!</button>

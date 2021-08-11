@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import logo from "./../assets/logos/DMKA.png";
+import logo from "./../assets/logos/Thorr.png";
 
 class NavMobile extends Component {
   state = {
@@ -37,7 +37,7 @@ class NavMobile extends Component {
           <i onClick={this.handleCloseClick} className="fas fa-times" />
           <ul className="nav__mobile__list">
             <li className="nav__mobile__list__elem">
-              <Link to="/about">Poznaj DMKA</Link>
+              <Link to="/about">Poznaj Thorr</Link>
             </li>
             <li className="nav__mobile__list__elem">
               <Link to="/bulletin">Dla firm</Link>
@@ -55,11 +55,11 @@ class NavMobile extends Component {
     return (
       <nav className="nav__desktop">
         <Link to="/">
-          <img src={logo} alt="DMKA logo" className="nav__mobile__main--logo" />
+          <img src={logo} alt="Thorr logo" className="nav__mobile__main--logo" />
         </Link>
         <ul className="nav__mobile__list">
           <li className="nav__mobile__list__elem">
-            <Link to="/about">Poznaj DMKA</Link>
+            <Link to="/about">Poznaj Thorr</Link>
           </li>
           <li className="nav__mobile__list__elem">
             <Link to="/bulletin">Dla firm</Link>

@@ -5,10 +5,12 @@ main {
   .main__background {
     width: auto;
     height: 100vh;
-    background-image: url(./../assets/backgrounds/main-background2.jpg);
+    background-color: #999;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-image: url(./../assets/backgrounds/main-background1.jpg);
+    animation: fade-in 2s initial;
   }
 
   .main__container {
@@ -18,34 +20,37 @@ main {
     align-items: center;
     position: absolute;
     flex-direction: column;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
+
     .main__logo {
       width: auto;
-      height: 20rem;
+      height: 8rem;
       margin-top: 5rem;
       opacity: .9;
     }
   }
 }
 
-@media (min-width: 571px) {
+@media (min-width: 1000px) {
   main {
     .main__background {
       width: 100%;
       height: 75vh;
     }
 
-    .main__container{
+    .main__container {
       height: 25vh;
       position: initial;
       flex-direction: row;
       justify-content: space-around;
+
       .main__logo {
         width: auto;
-        height: 15vh;
+        height: 10vh;
         justify-self: flex-start;
         margin-top: 0;
+        margin-left: 5rem;
       }
     }
   }

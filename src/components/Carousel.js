@@ -1,17 +1,14 @@
 import React, { Component } from "react";
 
-import navikon from "./../assets/logos/navikon_logo.png";
-import midroc from "./../assets/logos/midroc_logo.png";
-import energyMont from "./../assets/logos/energy-mont_logo.png";
 import dynpap from "./../assets/logos/dynpap_logo.png";
 import EPG from "./../assets/logos/EPG_logo.png";
-import thor from "./../assets/logos/thor_logo.png";
+import granly from "./../assets/logos/granly-logo.png";
 import crist from "./../assets/logos/crist_logo.png";
 import wielospaw from "./../assets/logos/wielospaw_logo.png";
 import WNS from "./../assets/logos/wns_logo.png";
 import stalkon from "./../assets/logos/stalkon_logo.png";
-import skanska from "./../assets/logos/skanska_logo.png";
-import man from "./../assets/logos/man_logo.png";
+import baltic from "./../assets/logos/baltic_logo.png";
+import mostostal from "./../assets/logos/mostostal_logo.svg";
 
 class Carousel extends Component {
   state = {
@@ -19,15 +16,12 @@ class Carousel extends Component {
       wielospaw,
       WNS,
       stalkon,
-      navikon,
-      midroc,
       dynpap,
       EPG,
-      thor,
+      granly,
       crist,
-      skanska,
-      man,
-      energyMont
+      baltic,
+      mostostal
     ],
     prevSlide: 0,
     currentSlide: 1,

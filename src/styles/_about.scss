@@ -32,6 +32,8 @@
       h2 {
         @include h2;
         color: black;
+        font-size: 5.5rem;
+        font-weight: 600;
       }
     }
 
@@ -43,17 +45,17 @@
       overflow: hidden;
       &:nth-of-type(2) {
         .about__img {
-          background-image: url(./../assets/backgrounds/main-background4.jpg);
+          background-image: url(./../assets/backgrounds/poznaj_thorr_1.jpg);
         }
       }
       &:nth-of-type(3) {
         .about__img {
-          background-image: url(./../assets/backgrounds/main-background2.jpg);
+          background-image: url(./../assets/backgrounds/poznaj_thorr_4.jpg);
         }
       }
       &:last-of-type {
         .about__img {
-          background-image: url(./../assets/backgrounds/main-background3.jpg);
+          background-image: url(./../assets/backgrounds/poznaj_thorr_5.jpg);
         }
       }
 

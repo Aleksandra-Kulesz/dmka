@@ -5,62 +5,66 @@
   background-color: #efefef;
 
   .bulletin__title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: auto;
     height: 40vh;
     opacity: 0.9;
-    z-index: 20;
   }
 
   .bulletin__title__header {
     @include h2;
     border-bottom: none;
     color: rgb(1, 14, 43);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 25;
     font-size: 2.5rem;
+    margin-top: 5rem;
   }
 
-  .bulletin__title__download {
-    @include button;
-    width: 9rem;
-    text-decoration: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 25;
+  .downloads {
     margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
 
-    i {
-      margin-right: 1rem;
+    .pdf {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 5rem;
+      width: 90vw;
+
+      a {
+        width: 90vw;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+
+        .react-pdf__Page__canvas {
+          max-width: 90vw ! important;
+          height: auto ! important;
+        }
+      }
     }
   }
 }
 
-@media (min-width: 571px) {
+@media (min-width: 1300px) {
   .bulletin {
 
     .bulletin__title__header {
-      font-size:3.5rem;
+      font-size: 3.5rem;
     }
 
-    .bulletin__title {
-      height: 50vh;
+    .downloads {
+      flex-direction: row;
+      flex-wrap: wrap;
 
-      .bulletin__title__background {
-        height: 40rem;
-      }
-
-      .bulletin__title__download {
-        margin-top: 14rem;
+      .pdf {
+        width: 45vw
       }
     }
+
   }
 }
